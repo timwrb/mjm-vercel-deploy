@@ -1,0 +1,18 @@
+<template>
+    <div class="justify-center flex">
+      <div class=" select-none md:mt-[8.75rem] mt-[3.75rem] w-full lg:w-9/12 xl:pl-[4rem] text-[3rem] font-extrabold">
+    <div class="flex-col md:flex-row">
+        <div class="justify-center flex lg:justify-normal">
+        <span class="hidden md:flex text-darkGrey100">Entdecke die besten </span>
+        <span class="bg-gradientBlue text-transparent bg-clip-text md:ml-2"> Minijobs</span>
+        </div>
+        <div class="justify-center flex lg:justify-normal">
+          <span class="hidden md:flex text-darkGrey100">oder starte dein </span>
+          <span class="bg-gradientBrown text-transparent bg-clip-text md:ml-2"> Praktikum</span>
+        </div>
+    </div>
+      </div>
+      </div>
+</template>
+
+<style> @import url("../assets/css/base.css");</style>
