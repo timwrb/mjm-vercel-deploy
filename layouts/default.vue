@@ -5,7 +5,38 @@
 
     <div class="navbar bg-transparent">
   <div class="navbar-start">
-    <div class="dropdown">
+
+    <Sidebar v-model:visible="visible" >
+      <template #header>
+        <div class="flex items-center">
+          <LOGOmjmSPAN />
+        </div>
+    </template>
+<div class="flex flex-col gap-2 bg-almostWhite rounded-xl p-4">
+<h1 class="hover:font-semibold cursor-pointer">Job Finden</h1>
+<h1 class="hover:font-semibold cursor-pointer">Favoriten</h1>
+<h2 class="hover:font-semibold cursor-pointer">Gespeicherte Jobs</h2>
+<h2 class="hover:font-semibold cursor-pointer">Favoriten</h2>
+<h1 class="hover:font-semibold cursor-pointer">Über uns</h1>
+
+<h1 class="font-bold text-darkGrey100 mt-2">Anzeige Schalten</h1>
+<h1>Anmelden</h1>
+</div>
+
+
+
+
+
+
+    </Sidebar>
+    <div class=" flex md:hidden ml-2 mr-4 cursor-pointer hover:bg-almostWhite" @click="visible = true" >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+      </svg>
+
+
+    </div>
+    <!--<div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
@@ -24,6 +55,7 @@
         <li><a class="text-emerald-600 font-bold">Anmelden</a></li>
       </ul>
     </div>
+    -->
                 <NuxtLink to="/" class="hover::opacity-60 select-none cursor-pointer">   
                 <LOGOmjmSPAN />
                 </NuxtLink>
@@ -92,3 +124,9 @@
 
 </div>
 </template>
+
+<script setup>
+
+import { ref } from 'vue';
+const visible = ref(false);
+</script>

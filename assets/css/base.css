@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope', 'Inter', sans-serif;
 }
 :root {
     --primary-50: 236 253 245;

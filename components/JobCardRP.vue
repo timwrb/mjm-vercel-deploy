@@ -4,7 +4,7 @@
   <!-- <NuxtLink :to="'/jobview/' + id"> -->
 <!-- <a :href="'/jobview/' + id"> -->
     <div class="justify-center flex mb-2 cursor-pointer" @click="visible = true">
-      <div class="w-full h-[10rem] bg-transparent border border-px rounded-[1rem] transform hover:translate-x-1 transition-transform duration-150 ease-in-out hover:border-customBlue">
+      <div class="w-full h-[10rem] bg-blur-3xl border border-px rounded-[1rem] transform hover:translate-x-1 transition-transform duration-150 ease-in-out hover:border-customBlue">
         <div class="flex">
           <div class="border border-px border-darkGrey40 rounded-[1.5rem] mt-[1.875rem] ml-[2rem] h-[4rem] w-[4rem] bg-white"></div>
           <div class="flex flex-col ml-[1.75rem] mt-[2.375rem]">

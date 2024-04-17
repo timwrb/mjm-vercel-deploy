@@ -4,7 +4,7 @@ import { createResolver } from 'nuxt/kit';
 import path from 'path';
 
 export default defineNuxtConfig({
-  
+  css: ['@/assets/css/base.css'],
   modules: ['@nuxtjs/tailwindcss', 'nuxt-primevue', "@nuxt/content"],
   primevue: {
     options: {
@@ -12,26 +12,7 @@ export default defineNuxtConfig({
     },
     importPT: { from: path.resolve(__dirname, './presets/') }      //import and apply preset   
   },
- /* hooks: {
-    'pages:routerOptions' ({ files }) {
-      const resolver = createResolver(import.meta.url)
-      // add a route
-      files.push({
-        path: resolver.resolve('./app/router.options.ts'),
-        optional: true
-      })
-    }
-  }, 
-  hooks: {
-    'pages:extend' (pages) {
-      // add a route
-      pages.push({
-        name: 'search',
-        path: '/search/:searchTerm/:tags*?/:radius/:zipCode?',
-        file: '~/~/pages/search/index.vue'
-      })
-    }
-  }, */
+
   tailwindcss: {
     config: {
       plugins: [require("daisyui")],
