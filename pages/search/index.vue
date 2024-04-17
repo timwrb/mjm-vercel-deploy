@@ -46,7 +46,7 @@ const removeTag = (tag) => {
 
 
 defineProps({
-  label: String
+  label: String,
 })
 </script>
 
@@ -59,7 +59,7 @@ defineProps({
         <div class="mt-12 flex justify-center mb-12">
         <SearchBar />
         </div>
-        
+
 <div class="ml-[68.75rem] absolute justify-center h-[22rem] -z-10">
   <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem]"></div>
 </div>
