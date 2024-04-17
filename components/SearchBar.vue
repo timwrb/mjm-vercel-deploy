@@ -34,7 +34,7 @@ export default {
 
   <div class="hidden lg:flex">
 
-    <NuxtLink to="/search" class="btn btn-default bg-almostBlack hover:bg-almostBlack text-almostWhite font-medium text-[1.25rem] rounded-3xl w-[13.438rem] h-[3rem] justify-center cursor-pointer select-none flex items-center hover:opacity-80">
+    <NuxtLink to="/search" class="btn btn-default bg-almostBlack hover:bg-almostBlack text-almostWhite font-medium text-[1.25rem] rounded-3xl w-[13.438rem] h-full justify-center cursor-pointer select-none flex items-center hover:opacity-80">
     Stelle finden
     </NuxtLink>
 

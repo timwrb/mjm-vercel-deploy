@@ -30,18 +30,16 @@ var FilterTags = ref([])
 const valueSliderKM = ref("0");
 
 const addTag = (tag) => {
-  // Überprüfen, ob der Tag bereits im Array vorhanden ist
   if (!FilterTags.value.includes(tag)) {
-    // Tag zum Array hinzufügen, wenn er nicht vorhanden ist
     FilterTags.value.push(tag);
     console.log(FilterTags)
   }
 };
 
 const removeTag = (tag) => {
-  const index = FilterTags.value.indexOf(tag); // Finden des Index des Tags im Array
+  const index = FilterTags.value.indexOf(tag);
   if (index !== -1) {
-    FilterTags.value.splice(index, 1); // Entfernen des Tags aus dem Array
+    FilterTags.value.splice(index, 1);
     console.log(FilterTags);
   }
 };
@@ -53,11 +51,18 @@ defineProps({
 </script>
 
 <template>
+  <NuxtLoadingIndicator />
     <div class=""> <!-- Wrapper -->
+
+      <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem] -z-10"></div>
 
         <div class="mt-12 flex justify-center mb-12">
         <SearchBar />
         </div>
+        
+<div class="ml-[68.75rem] absolute justify-center h-[22rem] -z-10">
+  <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem]"></div>
+</div>
 
 
         <div class="flex flex-col justify-center"> <!-- Filter Section Above < :lg -->
@@ -73,7 +78,7 @@ defineProps({
                 <div class="w-full h-fit">
                         <div class="flex items-center">
                     <div class="flex flex-row gap-4 justify-center w-full items-center mt-4"> <!-- Slider Kilometer Range -->
-                        <InputText v-model.number="valueSliderKM" class="w-4/6 flex justify-center h-8 w-20"/>
+                        <InputText v-model.number="valueSliderKM" class="w-4/6 flex justify-center ml-2 h-8 w-20"/>
                         <Slider min=0 max=100 v-model="valueSliderKM" class="w-[4rem] border border-px" />
                     </div>
                         </div>
@@ -117,16 +122,41 @@ defineProps({
                         </div>
                     
                     </div>
-                    <div> <!-- Results Map List -->
+                    <div class="gap-4"> <!-- Results Map List -->
 
                         <JobCardRP
-      :company="'Shell Tankstellen'"
-      :title="'Aushilfe Shell Tankstelle 538€ Basis (m / w / d)'"
-      :date="'14 März, 2024'"
-      :city="'Würzburg'"
-      :street="'Schweinfurter Straße'"
-      :salary="'12,50€'"
-    />
+                        :company="'Shell Tankstellen'"
+                        :title="'Aushilfe Shell Tankstelle 538€ Basis (m / w / d)'"
+                        :date="'14 März, 2024'"
+                        :city="'Würzburg'"
+                        :street="'Schweinfurter Straße'"
+                        :salary="'12,50€'"
+                        :id="'1'"
+                        :content="'Das hier ist der Content. Hier ist eine Aufzählung: - das ist der erste Punkt - der 2. Punkt ist hier - und das ist der letzte Das ist alles Dummy Data hier, aber sollte reichen um es zu veranschaulichen'"
+
+                        />
+
+                        <JobCardRP
+                        :company="'OMV Tankstellen'"
+                        :title="'Aushilfe OMV Tankstelle 538€ Basis (m / w / d)'"
+                        :date="'14 März, 2024'"
+                        :city="'Würzburg'"
+                        :street="'Nürnberger Straße'"
+                        :salary="'13,50€'"
+                        :id="'2'"
+                        :content="'Das hier ist der Content. Hier ist eine Aufzählung: - das ist der erste Punkt - der 2. Punkt ist hier - und das ist der letzte Das ist alles Dummy Data hier, aber sollte reichen um es zu veranschaulichen'"
+
+                        />
+
+                        <JobCardRP
+                        :company="'ESSO Tankstellen'"
+                        :title="'Aushilfe ESSO Tankstelle 538€ Basis (m / w / d)'"
+                        :date="'9 März, 2024'"
+                        :city="'Würzburg'"
+                        :street="'Sanderauer Straße'"
+                        :salary="'14,50€'"
+                        :id="'3'"
+                        />
 
                     </div>
                 </div>

@@ -57,8 +57,8 @@ export default {
             'ring-2',
 
             // Colors
-            'bg-surface-0 dark:bg-surface-900',
-            'ring-customBlue dark:customBlue',
+            'bg-surface-0 bg-almostWhite',
+            'ring-darkGrey40 dark:darkGrey100',
 
             // Transitions
             'transition duration-200',
@@ -85,8 +85,8 @@ export default {
             'ring-2',
 
             // Colors
-            'bg-surface-0 dark:bg-surface-900',
-            'ring-customBlue dark:ring-customBlue',
+            'bg-surface-0 dark:bg-darkGrey60',
+            'ring-darkGrey100 dark:ring-darkGrey100',
 
             // Transitions
             'transition duration-200',
@@ -113,7 +113,7 @@ export default {
             'ring-2',
 
             // Colors
-            'bg-surface-0 dark:bg-surface-900',
+            'bg-surface-0 dark:bg-darkGrey60',
             'ring-primary-500 dark:ring-customBlue',
 
             // Transitions

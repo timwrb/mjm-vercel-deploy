@@ -1,4 +1,5 @@
 <template>
+  <NuxtLoadingIndicator />
   <div class="h-[151.25rem]">
 
   <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem] -z-10"></div>
@@ -56,7 +57,7 @@
 </div>
 
 </div>
-<ScrollTop class="hidden lg:flex bg-gradientBlueLight"/>
+<ScrollTop class="hidden lg:flex bg-black"/>
 </div>
 </template>
 

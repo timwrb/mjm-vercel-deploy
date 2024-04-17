@@ -2,9 +2,9 @@
 
 <template>
       <div class="justify-center flex">
-        <div class="w-[46.375rem] h-[12.625rem] bg-almostWhite shadow-xl rounded-[2rem]">
+        <div class="w-[46.375rem] h-[12.625rem] bg-almostWhite shadow-xl rounded-[2rem] cursor-pointer transform hover:-translate-y-1 transition-transform duration-150 ease-in-out">
           <div class="flex">
-            <div class="border border-px border-darkGrey40 rounded-[2rem] mt-[1.875rem] ml-[2rem] border-sky-800 h-[5.5rem] w-[5.5rem] bg-white"></div>
+            <div class="border border-px border-darkGrey40 rounded-[2rem] mt-[1.875rem] ml-[2rem] border-darkGrey60 h-[5.5rem] w-[5.5rem] bg-white"></div>
             <div class="flex flex-col ml-[1.75rem] mt-[2.375rem]">
             <span class="text-darkGrey40 font-medium text-[1rem]">{{ company }}</span>
             <span class="text-darkGrey100 font-bold text-[1.375rem] truncate">{{ title }}</span>

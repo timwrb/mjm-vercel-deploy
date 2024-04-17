@@ -8,7 +8,7 @@ export default {
 
             // Size
             'max-h-[90vh]',
-            { 'sm:w-full sm:max-w-lg': !state.maximized },
+            { 'sm:w-full sm:max-w-[100rem]': !state.maximized },
             'm-0',
 
             // Transitions
@@ -45,8 +45,8 @@ export default {
             'rounded-tr-lg',
 
             // Colors
-            'bg-surface-0 dark:bg-surface-800',
-            'text-surface-700 dark:text-surface-0/80'
+            'bg-surface-0 dark:bg-white',
+            'text-surface-700 dark:text-darkGrey100'
         ]
     },
     title: {
@@ -82,7 +82,7 @@ export default {
             'hover:text-surface-700 dark:hover:text-white/80',
             'hover:bg-surface-100 dark:hover:bg-surface-800/80',
             'focus:outline-none focus:outline-offset-0 focus:ring-1 focus:ring-inset',
-            'focus:ring-primary-500 dark:focus:ring-primary-400',
+            'focus:ring-customBlue dark:focus:ring-customBlue/80',
 
             // Misc
             'overflow-hidden'
@@ -158,8 +158,8 @@ export default {
             },
 
             // Colors
-            'bg-surface-0 dark:bg-surface-800',
-            'text-surface-600 dark:text-surface-0/70',
+            'bg-surface-0 dark:bg-white',
+            'text-surface-600 dark:text-darkGrey100',
 
             // Misc
             'overflow-y-auto'

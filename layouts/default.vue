@@ -15,7 +15,7 @@
           <a>Favoriten</a>
           <ul class="p-2">
             <li><a>Gespeicherte Jobs</a></li>
-            <li><a>Option 2</a></li>
+            <li><a>Favoriten</a></li>
           </ul>
         </li>
         <li><a>Über uns</a></li>
@@ -25,9 +25,7 @@
       </ul>
     </div>
                 <NuxtLink to="/" class="hover::opacity-60 select-none cursor-pointer">   
-                <span class="text-darkGrey100 font-bold text-[1.5rem]">mini</span>
-                <span class="text-darkGrey100 font-bold text-[1.75rem]">job</span>
-                <span class="bg-gradientBlue bg-clip-text text-transparent font-bold text-[1.75rem]">Match</span>
+                <LOGOmjmSPAN />
                 </NuxtLink>
   </div>
   <div class="navbar-center hidden lg:flex">
@@ -46,7 +44,7 @@
     </ul>
   </div>
   <div class="navbar-end gap-4 hidden md:flex">
-    <a class="btn btn-sm btn-ghost">Anzeige Schalten</a>
+    <NuxtLink to="http://127.0.0.1:8000/admin"><a class="btn btn-sm btn-ghost">Anzeige Schalten</a></NuxtLink>
     <a class="btn btn-sm">Anmelden</a>
   </div>
 </div>
@@ -61,9 +59,7 @@
   <aside>
     <div class="flex flex-col gap-[0.5rem]">
                 <div class="mt-[0.5rem] select-none cursor-pointer">   
-                <span class="text-darkGrey100 font-bold text-[1.5rem]">mini</span>
-                <span class="text-darkGrey100 font-bold text-[1.75rem]">job</span>
-                <span class="bg-gradientBlue bg-clip-text text-transparent font-bold text-[1.75rem]">Match</span>
+                  <LOGOmjmSPAN />
                 </div>
                     <div class="mt-4">
                     <p class="font-semibold">miniJobMatch GmbH</p>

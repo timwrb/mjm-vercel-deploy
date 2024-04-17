@@ -22,13 +22,13 @@ export default {
             'shadow-sm',
             { 'ring-1 ring-inset ring-offset-0': parent.instance.$name !== 'InputGroup' },
 
-            { 'ring-darkGrey100 dark:ring-darkGrey100': !props.invalid },
+            { 'ring-darkGrey100 dark:ring-darkGrey40': !props.invalid },
 
             // Invalid State
             { 'ring-red-500 dark:ring-red-400': props.invalid },
 
             // Shape
-            { 'rounded-md': parent.instance.$name !== 'InputGroup' },
+            { 'rounded-full': parent.instance.$name !== 'InputGroup' },
             { 'first:rounded-l-md rounded-none last:rounded-r-md': parent.instance.$name == 'InputGroup' },
             { 'border-0 border-y border-l last:border-r border-surface-300 dark:border-surface-600': parent.instance.$name == 'InputGroup' },
             { 'first:ml-0 -ml-px': parent.instance.$name == 'InputGroup' && !props.showButtons },

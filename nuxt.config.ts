@@ -5,7 +5,7 @@ import path from 'path';
 
 export default defineNuxtConfig({
   
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-primevue',],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-primevue', "@nuxt/content"],
   primevue: {
     options: {
       unstyled: true
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         optional: true
       })
     }
-  }, */
+  }, 
   hooks: {
     'pages:extend' (pages) {
       // add a route
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         file: '~/~/pages/search/index.vue'
       })
     }
-  },
+  }, */
   tailwindcss: {
     config: {
       plugins: [require("daisyui")],

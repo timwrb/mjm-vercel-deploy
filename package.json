@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/content": "^2.12.1",
+    "marked": "^12.0.1",
     "nuxt": "^3.11.1",
     "primevue": "^3.50.0",
     "vue": "^3.4.21",
