@@ -72,7 +72,7 @@ export default {
             'rounded-full',
 
             // Colors
-            'text-surface-500',
+            'text-darkGrey100',
             'bg-transparent',
 
             // Transitions
@@ -82,7 +82,7 @@ export default {
             'hover:text-surface-700 dark:hover:text-white/80',
             'hover:bg-surface-100 dark:hover:bg-surface-800/80',
             'focus:outline-none focus:outline-offset-0 focus:ring-1 focus:ring-inset',
-            'focus:ring-customBlue dark:focus:ring-customBlue/80',
+            'focus:ring-customBlue dark:focus:ring-white',
 
             // Misc
             'overflow-hidden'

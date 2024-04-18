@@ -46,7 +46,7 @@ const removeTag = (tag) => {
 
 
 defineProps({
-  label: String,
+  label: String
 })
 </script>
 
@@ -54,20 +54,14 @@ defineProps({
   <NuxtLoadingIndicator />
     <div class=""> <!-- Wrapper -->
 
-      <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem] -z-10"></div>
 
         <div class="mt-12 flex justify-center mb-12">
         <SearchBar />
         </div>
 
-<div class="ml-[68.75rem] absolute justify-center h-[22rem] -z-10">
-  <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem]"></div>
-</div>
-
-
         <div class="flex flex-col justify-center"> <!-- Filter Section Above < :lg -->
-                <div class="w-full h-[4rem] lg:hidden border border-px">
-                    <span class="flex justify-center mt-4">Filter Options // Reveal Button (Accordion style)</span>
+                <div class="w-scree  h-[4rem] lg:hidden border border-px">
+                    <span class="flex justify-center mt-4">Filter Options // Reveal Button</span>
                 </div>
                 
             
@@ -110,8 +104,8 @@ defineProps({
                             <span class="font-bold text-[1rem]">Ergebnisse: </span>
                             <span class="font-medium text-[1rem]">168</span>
                         </div> 
-                        <div> <!-- Right side -->
-                            <span class="font-semilight text-[0.875rem] mr-2">Sortieren nach: </span>
+                        <div class="flex flex-row items-center gap-1"> <!-- Right side -->
+                            <span class="hidden sm:flex font-semilight text-[0.875rem] mr-2">Sortieren nach: </span>
 
                             <select class="select select-sm select-bordered w-[8rem] h-[2rem]"> <!-- Selector -->
                             <option>Neuste</option>

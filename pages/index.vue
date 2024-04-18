@@ -2,13 +2,15 @@
   <NuxtLoadingIndicator />
   <div class="h-[151.25rem]">
 
-  <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem] -z-10"></div>
+  <!-- <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem] -z-10"></div> -->
     <div class="">
 <HeroShot />
     </div>
+    <!--
 <div class="ml-[68.75rem] absolute justify-center h-[22rem] -z-10">
   <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem]"></div>
 </div>
+-->
 
 <div class="flex justify-center mt-[4rem] lg:mt-[6.25rem]">
 <SearchBar />
