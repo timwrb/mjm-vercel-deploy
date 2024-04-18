@@ -4,7 +4,6 @@
 const route = useRoute();
 
 const filterSections = [
-    { id: 0, label: "DIVIDER" },
   { id: 1, label: "Minijob" },
   { id: 2, label: "Praktikum" },
     { id: 3, label: "DIVIDER" },
@@ -56,7 +55,7 @@ defineProps({
     <div class=""> <!-- Wrapper -->
 
 
-        <div class="mt-12 flex justify-center mb-12">
+        <div class="mt-6 md:mt-12 flex justify-center mb-6 md:mb-12">
         <SearchBar />
         </div>
 
@@ -72,8 +71,8 @@ defineProps({
       </template>
 
       <div class="flex justify-center"> <!-- Save Button -->
-        <div class="font-bold w-[12rem] h-[2rem] mb-4 bg-almostBlack flex items-center justify-center rounded-full" >
-          <p class="font-semibold text-[1.25rem] text-almostWhite">Sichern</p>
+        <div class="btn hover:bg-almostBlack hover:opacity-80 font-bold w-[12rem] h-[2rem] mb-4 bg-almostBlack flex items-center justify-center rounded-full" @click="visibleFilterSidebar = false" >
+          <p class="font-semibold text-[1.25rem] text-almostWhite" >Sichern</p>
         </div>
       </div>
 
@@ -96,28 +95,7 @@ defineProps({
       </div>
 </Sidebar>
       <!-- Trigger button -->
-    <div class=" flex lg:hidden pl-4 pr-4 w-full cursor-pointer " @click="visibleFilterSidebar = true" >
-
-          <div class="gap-8 bg-almostWhite rounded-[1rem] w-full h-[2rem] md:h-[3rem] items-center flex mb-3 border border-darkGrey40 border-[0.5px]">
-                  <!-- Count Bubble Why tf ever it does not become round)-->
-                  <div v-if="FilterTags.length > 0" class="ml-1 md:ml-2 rounded-full md:rounded-[0.75rem] bg-customBlueDarker bg-opacity-40 border border-[1px] border-customBlue h-6 w-12 md:h-8 text-[0.8rem] md:text-[1rem] font-semibold md:font-medium text-darkGrey100 items-center flex justify-center">
-                  {{ FilterTags.length }}
-                  </div>
-
-                  <div class="flex items-center place-content-between w-full h-full"> <!-- Wrapper for filter right align-->
-
-                    <div class="h-1 w-1 bg-transparent FILLER IGNORE"></div> <!-- Filler for space-between -->
-
-                        <div class="flex flex-row mr-4"> <!-- Filter icon + text -->
-                    <h1 class="mr-1 font-semibold text-[1.125rem] md:h-[1.5rem] text-darkGrey100">Filtern</h1>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
-                    </svg>
-                        </div>
-
-                  </div>
-          </div>
-    </div>
+    
 
 </div>
 <!-- / Sidebar Filter -->
@@ -128,10 +106,10 @@ defineProps({
                 
                 <div class="w-full h-fit">
                         <div class="flex items-center">
-                    <div class="flex flex-row gap-4 justify-center w-full items-center mt-4"> <!-- Slider Kilometer Range -->
+                    <!-- <div class="flex flex-row gap-4 justify-center w-full items-center mt-4">  Slider Kilometer Range
                         <InputText v-model.number="valueSliderKM" class="w-4/6 flex justify-center ml-2 h-8 w-20"/>
                         <Slider min=0 max=100 v-model="valueSliderKM" class="w-[4rem] border border-px" />
-                    </div>
+                    </div> --->
                         </div>
                     <div class="mt-2 mb-2 lg:ml-2">
                         <FilterTag v-for="(tag, index) in FilterTags" :key="index" :label="tag" @remove="removeTag(tag)"/>
@@ -152,22 +130,38 @@ defineProps({
                 </div>
                 <div class="w-full lg:w-9/12 h-full pl-4 pr-4"> <!-- Result Area -->
                     <div class="w-full h-[3.5rem] bg-transparent flex justify-between items-center"> <!-- Top Text Bar Results: / Sort by: ___  -->
-                        <div>   <!-- Left side -->
-                            <span class="font-bold text-[1rem]">Ergebnisse: </span>
-                            <span class="font-medium text-[1rem]">168</span>
-                        </div> 
-                        <div class="flex flex-row items-center gap-1"> <!-- Right side -->
-                            <span class="hidden sm:flex font-semilight text-[0.875rem] mr-2">Sortieren nach: </span>
 
-                            <select class="select select-sm select-bordered w-[8rem] h-[2rem]"> <!-- Selector -->
+<!-- Filter Button --> <div class="flex lg:hidden pr-4 w-full cursor-pointer " @click="visibleFilterSidebar = true" >
+
+<div class="bg-transparent hover:bg-almostWhite rounded-lg w-[8rem] h-[2rem] items-center flex border border-darkGrey40 border-[0.5px]">
+        <!-- Count Bubble Why tf ever it does not become round)-->
+        <div v-if="FilterTags.length > 0" class="ml-1 rounded-full bg-customBlue border h-6 w-12 text-[0.8rem] font-semibold md:font-medium text-white items-center flex justify-center">
+        {{ FilterTags.length }}
+        </div>
+
+        <div class="flex items-center place-content-between w-full h-full"> <!-- Wrapper for filter right align-->
+
+          <div class="h-1 w-1 bg-transparent FILLER IGNORE"></div> <!-- Filler for space-between -->
+            <p class="text-darkGrey100 font-semilight text-[1rem]">Filter</p>
+              <div class="flex flex-row mr-2"> <!-- Filter icon + text -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 mt-[0.1rem] h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
+          </svg>
+              </div>
+        </div> 
+</div>
+<!-- / Filter Button--> </div>
+
+                        <div class="flex flex-row items-center gap-1"> <!-- Right side -->
+                            <select class="hover:bg-almostWhite select select-sm select-bordered md:w-[10rem] w-[8rem] h-[2rem]"> <!-- Selector -->
                             <option>Neuste</option>
                             <option>Meist gesehen</option>
                             <option>Älteste</option>
                             </select>
-
                         </div>
                     
-                    </div>
+                    </div> <!--  / Top Text Bar Results: / Sort by: ___  -->
+
                     <div class="gap-4"> <!-- Results Map List -->
 
                         <JobCardRP
