@@ -27,7 +27,7 @@ const filterSections = [
 
 
 var FilterTags = ref([])
-const valueSliderKM = ref("0");
+const valueSliderKM = ref(0);
 
 const addTag = (tag) => {
   if (!FilterTags.value.includes(tag)) {

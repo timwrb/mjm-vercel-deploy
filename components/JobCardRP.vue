@@ -15,19 +15,19 @@
           <span class="flex sm:hidden text-darkGrey40 font-medium text-[0.7rem] sm:text-[0.825rem]">{{ company }}</span>
             </div>
             <div class="flex-row w-full mr-2">
-          <h1 class=" w-full truncate text-darkGrey100 font-bold text-[1rem] sm:text-[1.2rem] pr-2 whitespace-normal">{{ title }}</h1>
+          <h1 class=" w-full truncate text-darkGrey100 font-bold text-[1rem] sm:text-[1.2rem] pr-2 whitespace-normal mt-1 sm:mt-0">{{ title }}</h1>
           </div>
         </div>
         </div>
         <div class="ml-[1.5rem] sm:ml-[2rem] mt-[0.5rem] sm:mt-[1.25rem]">
-          <div class="flex flex-row gap-[0.75rem] mb-2">
+          <div class="flex flex-row gap-[0.75rem] mb-2 flex-wrap">
       <!-- date -->
       <div class="h-[1.1rem] sm:h-[1.7rem] rounded-full border-[0.05rem] sm:border-[0.1rem] border-darkGrey100 bg-white justify-center flex items-center">
   <!-- Calendar Icon -->
   <svg class="ml-4 sm:flex hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 0C4.91421 0 5.25 0.335786 5.25 0.75V2.25H14.25V0.75C14.25 0.335786 14.5858 0 15 0C15.4142 0 15.75 0.335786 15.75 0.75V2.25H16.5C18.1569 2.25 19.5 3.59315 19.5 5.25V16.5C19.5 18.1569 18.1569 19.5 16.5 19.5H3C1.34315 19.5 0 18.1569 0 16.5V5.25C0 3.59315 1.34315 2.25 3 2.25H3.75V0.75C3.75 0.335786 4.08579 0 4.5 0ZM18 9C18 8.17157 17.3284 7.5 16.5 7.5H3C2.17157 7.5 1.5 8.17157 1.5 9V16.5C1.5 17.3284 2.17157 18 3 18H16.5C17.3284 18 18 17.3284 18 16.5V9Z" fill="#252323"/>
   </svg>
-      <span class="ml-2 sm:ml-2 mr-2 sm:mr-4 font-light text-[0.65rem] sm:text-[0.825rem]">{{ date }}</span>
+      <span class="ml-2 sm:ml-2 mr-2 sm:mr-4 font-medium sm:font-light text-[0.65rem] sm:text-[0.825rem]">{{ date }}</span>
       </div>
 
       <!-- city -->
@@ -36,8 +36,8 @@
       </div>
 
       <!-- street -->
-      <div class="hidden md:flex h-[1.7rem] rounded-full border-[0.08rem] border-darkGrey100 bg-white justify-center flex items-center">
-      <span class="ml-3 mr-3 bg-gradientBlue bg-clip-text text-transparent font-medium text-[0.825rem]">{{ street }}</span>
+      <div class="h-[1.1rem] sm:h-[1.7rem] rounded-full border-[0.05rem] sm:border-[0.08rem] border-darkGrey100 bg-white justify-center flex items-center">
+      <span class="ml-3 mr-3 bg-gradientBlue bg-clip-text text-transparent font-medium text-[0.65rem] sm:text-[0.825rem]">{{ street }}</span>
       </div>
 
       <!-- salary -->
