@@ -9,7 +9,7 @@
     <Sidebar v-model:visible="visible" >
       <template #header>
         <div class="flex items-center">
-          <LOGOmjmSPAN />
+          <LOGOmjm />
         </div>
     </template>
 <div class="flex flex-col gap-2 bg-almostWhite rounded-xl p-4">
@@ -57,7 +57,7 @@
     </div>
     -->
                 <NuxtLink to="/" class="hover::opacity-60 select-none cursor-pointer">   
-                <LOGOmjmSPAN />
+                <LOGOmjm />
                 </NuxtLink>
   </div>
   <div class="navbar-center hidden lg:flex">

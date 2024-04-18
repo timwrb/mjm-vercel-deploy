@@ -4,7 +4,7 @@
   <!-- <NuxtLink :to="'/jobview/' + id"> -->
 <!-- <a :href="'/jobview/' + id"> -->
     <div class="justify-center flex mb-2 cursor-pointer" @click="visible = true">
-      <div class="w-full h-[7.25rem] sm:h-[10rem] bg-blur-3xl border border-px rounded-[1rem] transform hover:translate-x-1 transition-transform duration-150 ease-in-out hover:border-customBlue">
+      <div class="w-full h-[7.25rem] sm:h-[10rem] pr-2 bg-blur-3xl border border-px rounded-[1rem] transform hover:translate-x-1 transition-transform duration-150 ease-in-out hover:border-customBlue">
         <div class="flex">
           <div class="hidden sm:flex border border-px border-darkGrey40 rounded-[1.5rem] mt-[1.875rem] ml-[2rem] h-[4rem] w-[4rem] bg-white"></div>
           <div class="flex flex-col ml-[1.75rem] mt-[1.5rem] sm:mt-[2.375rem]">
@@ -14,8 +14,8 @@
           <div class="flex sm:hidden border border-px border-darkGrey40 rounded-[0.5rem] h-[1.5rem] w-[1.5rem] bg-white"></div>
           <span class="flex sm:hidden text-darkGrey40 font-medium text-[0.7rem] sm:text-[0.825rem]">{{ company }}</span>
             </div>
-            <div class="w-full truncate">
-          <span class="text-darkGrey100 font-bold text-[1rem] sm:text-[1.2rem] truncate pr-2">{{ title }}</span>
+            <div class="flex">
+          <h1 class=" w-full truncate text-darkGrey100 font-bold text-[1rem] sm:text-[1.2rem] pr-2">{{ title }}</h1>
           </div>
         </div>
         </div>
@@ -70,7 +70,7 @@
           </div>
           <div class="gap-2 flex flex-col w-full ml-2 mr-2">
             <h1 class="text-darkGrey60 font-medium text-[1rem] md:text-[1.125rem] hidden sm:flex">{{ company }}</h1>
-            <h2 class="text-customBlue font-bold text-[1.2rem] md:text-[1.625rem]">{{ title }}</h2>
+            <h1 class="text-customBlue font-bold text-[1.2rem] md:text-[1.625rem]">{{ title }}</h1>
           </div>
       </div>
 
