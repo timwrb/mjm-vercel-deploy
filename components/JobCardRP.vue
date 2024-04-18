@@ -45,23 +45,32 @@
 
 
     <!-- MODAL -->
-    <Dialog v-model:visible="visible" modal header="Stellenanzeige Vorschau" :style="{ width: '60rem' }" :breakpoints="{ '1199px': '75vw', '575px': '90vw' }">
-    <p class="mb-5">
+    <Dialog v-model:visible="visible" modal header="Stellenanzeige Vorschau" class="w-screen md:w-[60rem]" :breakpoints="{ '1199px': '75vw', '575px': '90vw' }">
+    <p class="sm:mb-5">
       
     </p>
+          <!-- MOBILE COMPANY + AVATAR -->
+          <div class="AVATAR flex flex-row items-center"> 
+            <div class="mb-4 mr-4 border border-px border-darkGrey40 flex sm:hidden rounded-[1rem] mt-[0.5625rem] h-[3rem] w-[3rem] bg-white"></div>
+          
+            <h1 class="text-darkGrey60 font-medium text-[1rem] md:text-[1.125rem] flex sm:hidden">{{ company }}</h1>
+          </div>
+          <!--  / MOBILE COMPANY + AVATAR -->
+
       <div class="flex flex-row items-center">
-          <div>
+          <div class="AVATAR">
             <div class="mr-8 border border-px border-darkGrey40 hidden sm:flex sm:rounded-[1.5rem] md:rounded-[2rem] mt-[0.5625rem] md:mt-[1.875rem] ml-[0.5rem] sm:ml-[2rem] h-[4rem] sm:h-[4rem] md:h-[6rem] w-[4rem] sm:w-[4rem] md:w-[6rem] bg-white"></div>
           </div>
           <div class="gap-2 flex flex-col">
-            <h1 class="text-darkGrey60 font-medium text-[1rem] md:text-[1.125rem]">{{ company }}</h1>
-            <h2 class="text-transparent bg-clip-text bg-gradientBlue font-bold text-[1.2rem] md:text-[1.625rem] truncate">{{ title }}</h2>
+            <h1 class="text-darkGrey60 font-medium text-[1rem] md:text-[1.125rem] hidden sm:flex">{{ company }}</h1>
+            <h2 class="text-customBlue font-bold text-[1.2rem] md:text-[1.625rem] truncate">{{ title }}</h2>
           </div>
       </div>
 
     <div class="mt-6 place-content-between flex">
       <a :href="'/jobview/' + id" class="btn btn-sm md:btn-md btn-outline btn-link hover:underline hover:bg-almostWhite hover:text-darkGrey100">
-        Weiter zur Stellenanzeige <!-- arrow-up-right heroicons -->
+        <span class="hidden md:flex">Weiter zur Stellenanzeige</span>
+        <span class="flex md:hidden">Zur Anzeige</span> <!-- arrow-up-right heroicons -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
         </svg>

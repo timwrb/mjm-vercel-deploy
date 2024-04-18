@@ -42,7 +42,8 @@ export default defineNuxtConfig({
         darkGrey100: '#252323',
         darkGrey60: 'rgba(37, 35, 35, 0.6)', // 60% opacity
         darkGrey40: 'rgba(37, 35, 35, 0.4)', // 40% opacity
-        customBlue: '#6ccff6',
+        customBlue: '#4A7D91',
+        customBlueDarker: '#6ccff6',
         almostBlack: '#0f0f0f',
         almostWhite: '#F7F7F7',
 
