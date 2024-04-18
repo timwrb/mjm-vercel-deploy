@@ -26,6 +26,7 @@ const filterSections = [
 ]
 
 
+const visibleFilterSidebar = ref(false);
 var FilterTags = ref([])
 const valueSliderKM = ref(0);
 
@@ -60,10 +61,66 @@ defineProps({
         </div>
 
         <div class="flex flex-col justify-center"> <!-- Filter Section Above < :lg -->
-                <div class="w-scree  h-[4rem] lg:hidden border border-px">
-                    <span class="flex justify-center mt-4">Filter Options // Reveal Button</span>
-                </div>
+                <div class="w-full lg:hidden">
+                    
+<!-- Sidebar Filter -->
+                  <Sidebar v-model:visible="visibleFilterSidebar" >
+      <template #header>
+        <div class="flex items-center">
+          <LOGOmjm />
+        </div>
+      </template>
+
+      <div class="flex justify-center"> <!-- Save Button -->
+        <div class="font-bold w-[12rem] h-[2rem] mb-4 bg-almostBlack flex items-center justify-center rounded-full" >
+          <p class="font-semibold text-[1.25rem] text-almostWhite">Sichern</p>
+        </div>
+      </div>
+
+
+      <div class="mt-2 mb-2 w-[4/6]"> <!-- Filter Tag Chip Show Area -->
+        <div class="w-full flex-wrap"> 
+          <FilterTag v-for="(tag, index) in FilterTags" :key="index" :label="tag" @remove="removeTag(tag)"/>
+        </div>
+      </div>
                 
+      <div class="ml-2 flex flex-col gap-2 mt-2"> <!-- FilterClickOptions -->
+                        <!-- Render the JSON Object Informations -->
+        
+      <div v-for="(section, index) in filterSections" :key="index">
+                        <!-- Überprüfen, ob das Label "DIVIDER" ist -->
+      <div v-if="section.label === 'DIVIDER'" class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
+                        <!-- Wenn nicht, rendern Sie das span Element -->
+      <span v-else class="ml-2 font-medium text-[1rem] select-none hover:underline hover:cursor-pointer" @click="addTag(section.label)">{{ section.label }}</span>
+                        </div>
+      </div>
+</Sidebar>
+      <!-- Trigger button -->
+    <div class=" flex lg:hidden pl-4 pr-4 w-full cursor-pointer " @click="visibleFilterSidebar = true" >
+
+          <div class="gap-8 bg-almostWhite rounded-[1rem] w-full h-[2rem] md:h-[3rem] items-center flex mb-3 border border-darkGrey40 border-[0.5px]">
+                  <!-- Count Bubble Why tf ever it does not become round)-->
+                  <div v-if="FilterTags.length > 0" class="ml-1 md:ml-2 rounded-full md:rounded-[0.75rem] bg-customBlueDarker bg-opacity-40 border border-[1px] border-customBlue h-6 w-12 md:h-8 text-[0.8rem] md:text-[1rem] font-semibold md:font-medium text-darkGrey100 items-center flex justify-center">
+                  {{ FilterTags.length }}
+                  </div>
+
+                  <div class="flex items-center place-content-between w-full h-full"> <!-- Wrapper for filter right align-->
+
+                    <div class="h-1 w-1 bg-transparent FILLER IGNORE"></div> <!-- Filler for space-between -->
+
+                        <div class="flex flex-row mr-4"> <!-- Filter icon + text -->
+                    <h1 class="mr-1 font-semibold text-[1.125rem] md:h-[1.5rem] text-darkGrey100">Filtern</h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
+                    </svg>
+                        </div>
+
+                  </div>
+          </div>
+    </div>
+
+</div>
+<!-- / Sidebar Filter -->
             
         <div class="flex justify-center"> <!-- Search / Result Area -->
             <div class="flex flex-row h-[100rem] w-full xl:w-[70rem] border-t border-darkGrey60">  
@@ -76,7 +133,7 @@ defineProps({
                         <Slider min=0 max=100 v-model="valueSliderKM" class="w-[4rem] border border-px" />
                     </div>
                         </div>
-                    <div class="mt-2 mb-2">
+                    <div class="mt-2 mb-2 lg:ml-2">
                         <FilterTag v-for="(tag, index) in FilterTags" :key="index" :label="tag" @remove="removeTag(tag)"/>
                     </div>
                 </div>
@@ -90,11 +147,6 @@ defineProps({
                         {{ section.label }}
                         </span>
                         </div>
-
-                    
-
-
-
                 </div>
 
                 </div>
