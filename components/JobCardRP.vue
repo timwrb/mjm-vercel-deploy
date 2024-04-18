@@ -57,7 +57,7 @@
       
     </p>
           <!-- MOBILE COMPANY + AVATAR -->
-          <div class="AVATAR flex flex-row items-center"> 
+          <div class="AVATAR flex flex-row items-center w-full"> 
             <div class="mb-4 mr-4 border border-px border-darkGrey40 flex sm:hidden rounded-[1rem] mt-[0.5625rem] h-[3rem] w-[3rem] bg-white"></div>
           
             <h1 class="text-darkGrey60 font-medium text-[1rem] md:text-[1.125rem] flex sm:hidden">{{ company }}</h1>
