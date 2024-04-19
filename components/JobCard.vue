@@ -1,5 +1,5 @@
 
-
+w-[46.375rem] h-[12.625rem] bg-almostWhite shadow-xl hover:-translate-y-1 transition-transform duration-150 ease-in-out
 <template>
       <div class="justify-center flex">
         <div class="w-[46.375rem] h-[12.625rem] bg-almostWhite shadow-xl rounded-[2rem] cursor-pointer transform hover:-translate-y-1 transition-transform duration-150 ease-in-out">

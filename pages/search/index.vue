@@ -3,6 +3,10 @@
 
 const route = useRoute();
 
+const deliverQueryParams = () => {
+
+}
+
 const filterSections = [
   { id: 1, label: "Minijob" },
   { id: 2, label: "Praktikum" },
@@ -51,7 +55,6 @@ defineProps({
 </script>
 
 <template>
-  <NuxtLoadingIndicator />
     <div class=""> <!-- Wrapper -->
 
 
@@ -133,20 +136,21 @@ defineProps({
 
 <!-- Filter Button --> <div class="flex lg:hidden pr-4 w-full cursor-pointer " @click="visibleFilterSidebar = true" >
 
-<div class="bg-transparent hover:bg-almostWhite rounded-lg w-[8rem] h-[2rem] items-center flex border border-darkGrey40 border-[0.5px]">
+<div class="bg-transparent hover:bg-almostWhite rounded-lg w-[5rem] h-[2rem] items-center flex border border-darkGrey40 border-[0.5px]">
         <!-- Count Bubble Why tf ever it does not become round)-->
-        <div v-if="FilterTags.length > 0" class="ml-1 rounded-full bg-customBlue border h-6 w-12 text-[0.8rem] font-semibold md:font-medium text-white items-center flex justify-center">
+        <div v-if="FilterTags.length > 0" class="ml-1 rounded-full bg-white border border-darkGrey40 h-6 w-12 text-[0.8rem] font-semibold md:font-medium text-darkGrey100 items-center flex justify-center">
         {{ FilterTags.length }}
         </div>
 
         <div class="flex items-center place-content-between w-full h-full"> <!-- Wrapper for filter right align-->
 
           <div class="h-1 w-1 bg-transparent FILLER IGNORE"></div> <!-- Filler for space-between -->
-            <p class="text-darkGrey100 font-semilight text-[1rem]">Filter</p>
+            <p class="text-darkGrey100 font-semilight text-[0.9rem]"></p>
               <div class="flex flex-row mr-2"> <!-- Filter icon + text -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 mt-[0.1rem] h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
-          </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8.00005 1C10.1426 1 12.243 1.18048 14.2868 1.52707C14.7013 1.59735 15 1.95943 15 2.37979V3.19179C15 3.65592 14.8156 4.10104 14.4874 4.42923L10.2626 8.6541C9.93437 8.98229 9.75 9.42741 9.75 9.89154V12.1684C9.75 12.8313 9.3755 13.4373 8.78262 13.7337L6.25 15V9.89154C6.25 9.42741 6.06563 8.98229 5.73744 8.6541L1.51256 4.42923C1.18437 4.10104 1 3.65592 1 3.19179V2.37981C1 1.95945 1.29873 1.59737 1.71317 1.52709C3.75706 1.18049 5.85748 1 8.00005 1Z" stroke="#0F172A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
               </div>
         </div> 
 </div>

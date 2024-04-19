@@ -18,7 +18,7 @@
 
 
 
-<div class="flex-col lg:flex-row w-full flex justify-center mt-[9.375rem] gap-[5.313rem] items-center">
+<div class="flex-col md:flex-row w-full flex justify-center mt-[9.375rem] gap-[5.313rem] items-center">
     <HeroShotMinijob />
     <JobCard
       :company="'Shell Tankstellen'"
@@ -32,7 +32,7 @@
 
 
 
-<div class="flex-col lg:flex-row w-full flex justify-center mt-[9.375rem] gap-[5.313rem] items-center">
+<div class="flex-col md:flex-row w-full flex justify-center mt-[9.375rem] gap-[5.313rem] items-center">
 <JobCard
       :company="'Shell Tankstellen'"
       :title="'Aushilfe Shell Tankstelle 538€ Basis (m / w / d)'"
