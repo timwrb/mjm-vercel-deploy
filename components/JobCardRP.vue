@@ -52,7 +52,7 @@
 
 
     <!-- MODAL -->
-    <Dialog v-model:visible="visible" modal header="Stellenanzeige Vorschau" class="w-screen md:w-[60rem]" :breakpoints="{ '1199px': '75vw', '575px': '90vw' }">
+    <Dialog v-model:visible="visible" modal header="Stellenanzeige Vorschau" class="w-11/12 md:w-[60rem]" :breakpoints="{ '1199px': '75vw', '575px': '90vw' }">
     <p class="sm:mb-5">
       
     </p>

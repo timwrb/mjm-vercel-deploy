@@ -99,12 +99,10 @@ const fetchData = async () => {
 };
 
 const { title, date, city, street, salary, company, content } = await fetchData();
-/*
-const markdownToHtml = (content) => {
-  return marked(content);
-};
-*/
 
-  fetchData();
+// const markdownToHtml = (content) => {
+//   return marked(content);
+// };
+
 </script>
 

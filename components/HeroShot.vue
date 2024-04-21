@@ -1,6 +1,6 @@
 <template>
     <div class="justify-center flex">
-      <div class="select-none md:mt-[8.75rem] mt-[3.75rem] w-full lg:w-9/12 xl:pl-[4rem] text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-extrabold">
+      <div class="select-none md:mt-[8.75rem] mt-[3.75rem] w-full lg:w-9/12 xl:pl-[4rem] text-[1.5rem] sm:text-[2.2rem] md:text-[3rem] font-extrabold">
     <div class="flex-col md:flex-row">
         <div class="justify-center flex lg:justify-normal">
         <span class="flex text-darkGrey100">Entdecke die besten </span>

@@ -177,7 +177,6 @@ defineProps({
                         :salary="'12,50€'"
                         :id="'1'"
                         :content="'Das hier ist der Content. Hier ist eine Aufzählung: - das ist der erste Punkt - der 2. Punkt ist hier - und das ist der letzte Das ist alles Dummy Data hier, aber sollte reichen um es zu veranschaulichen'"
-
                         />
 
                         <JobCardRP
@@ -200,6 +199,8 @@ defineProps({
                         :street="'Sanderauer Straße'"
                         :salary="'14,50€'"
                         :id="'3'"
+                        :content="'Das hier ist der Content. Hier ist eine Aufzählung: - das ist der erste Punkt - der 2. Punkt ist hier - und das ist der letzte Das ist alles Dummy Data hier, aber sollte reichen um es zu veranschaulichen'"
+
                         />
 
                     </div>

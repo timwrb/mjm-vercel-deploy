@@ -32,8 +32,8 @@ export default {
             'rounded-none',
 
             // Colors
-            'bg-surface-0 dark:bg-surface-800',
-            'text-primary-500 dark:text-primary-400',
+            'bg-white dark:bg-white',
+            'text-darkGrey100 dark:text-darkGrey100',
             'shadow-md'
         ]
     },
@@ -48,11 +48,11 @@ export default {
             'z-20',
 
             // Size and Shape
-            'h-full w-12',
+            'h-full w-1/2',
             'rounded-none',
 
             // Colors
-            'bg-surface-0 dark:bg-surface-800',
+            'bg-surface-0 dark:bg-white',
             'text-primary-500 dark:text-primary-400',
             'shadow-md'
         ]
@@ -67,9 +67,9 @@ export default {
             'p-0 m-0',
 
             // Colors
-            'bg-surface-0 dark:bg-surface-800',
-            'border-b border-surface-200 dark:border-surface-700',
-            'text-surface-900 dark:text-surface-0/80'
+            'bg-surface-0 dark:bg-white',
+            'border-b border-surface-200 dark:border-gray-300',
+            'text-darkGrey100 dark:text-darkGrey100'
         ]
     },
     tabpanel: {
@@ -105,22 +105,22 @@ export default {
 
                 // Colors and Conditions
                 {
-                    'border-surface-200 dark:border-surface-700': parent.state.d_activeIndex !== context.index,
-                    'bg-surface-0 dark:bg-surface-800': parent.state.d_activeIndex !== context.index,
-                    'text-surface-700 dark:text-surface-0/80': parent.state.d_activeIndex !== context.index,
+                    'border-surface-200 dark:border-gray-200': parent.state.d_activeIndex !== context.index,
+                    'bg-surface-0 dark:bg-white': parent.state.d_activeIndex !== context.index,
+                    'text-surface-700 dark:text-darkGrey100': parent.state.d_activeIndex !== context.index,
 
-                    'bg-surface-0 dark:bg-surface-800': parent.state.d_activeIndex === context.index,
-                    'border-primary-500 dark:border-primary-400': parent.state.d_activeIndex === context.index,
-                    'text-primary-500 dark:text-primary-400': parent.state.d_activeIndex === context.index
+                    'bg-surface-0 dark:bg-white': parent.state.d_activeIndex === context.index,
+                    'border-primary-500 dark:border-customBlue': parent.state.d_activeIndex === context.index,
+                    'text-primary-500 dark:text-customBlue': parent.state.d_activeIndex === context.index
                 },
 
                 // States
                 'focus-visible:outline-none focus-visible:outline-offset-0 focus-visible:ring-2 focus-visible:ring-inset',
-                'focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400',
+                'focus-visible:ring-customBlue dark:focus-visible:ring-customBlue',
                 {
-                    'hover:bg-surface-0 dark:hover:bg-surface-800/80': parent.state.d_activeIndex !== context.index,
-                    'hover:border-surface-400 dark:hover:border-surface-600': parent.state.d_activeIndex !== context.index,
-                    'hover:text-surface-900 dark:hover:text-surface-0': parent.state.d_activeIndex !== context.index
+                    'hover:bg-surface-0 dark:hover:bg-almostWhite': parent.state.d_activeIndex !== context.index,
+                    'hover:border-surface-400 dark:hover:border-gray-300': parent.state.d_activeIndex !== context.index,
+                    'hover:text-darkGrey100 dark:hover:text-darkGrey100': parent.state.d_activeIndex !== context.index
                 },
 
                 // Transitions
@@ -149,8 +149,8 @@ export default {
                 'rounded-b-md',
 
                 // Colors
-                'bg-surface-0 dark:bg-surface-800',
-                'text-surface-700 dark:text-surface-0/80',
+                'bg-surface-0 dark:bg-white',
+                'text-surface-700 dark:text-darkGrey100',
                 'border-0'
             ]
         }
