@@ -1,7 +1,23 @@
 
 <script setup>
+import { marked } from 'marked';
+import { ref, defineProps, watch } from 'vue';
+import { useRouter } from 'vue-router';
 
+
+const router = useRouter();
 const route = useRoute();
+
+// Router query
+const handleQueryPush = () => {
+  router.push({ query: { tags: selectedFilters.value } });
+};
+
+onMounted(() => {
+  console.log('Route query:', route.query);
+  selectedFilters.value = route.query.tags ? decodeURIComponent(route.query.tags).split(',') : [];
+})
+
 
 const deliverQueryParams = () => {
 
@@ -121,7 +137,8 @@ defineProps({
           v-model="selectedFilters" 
           :inputId="FilterOption.id" 
           :name="FilterOption.label" 
-          :value="FilterOption.label" 
+          :value="FilterOption.label"
+          @change="handleQueryPush" 
           />
 
           <label 
@@ -129,7 +146,7 @@ defineProps({
           :for="FilterOption.id">
           {{ FilterOption.label }}
           </label>
-          
+
         </div>
       </div>
     </div>
@@ -175,7 +192,9 @@ defineProps({
           v-model="selectedFilters" 
           :inputId="FilterOption.id" 
           :name="FilterOption.label" 
-          :value="FilterOption.label" />
+          :value="FilterOption.label"
+          @change="handleQueryPush"
+          />
 
           <label 
           class="select-none hover:opacity-60" 
