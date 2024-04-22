@@ -10,7 +10,17 @@ const route = useRoute();
 
 // Router query
 const handleQueryPush = () => {
-  router.push({ query: { tags: selectedFilters.value } });
+  // Get the current query parameters from the router
+  const currentQuery = { ...route.query };
+
+  // Merge the existing query parameters with the new tag query parameters
+  const mergedQuery = {
+    ...currentQuery,
+    tags: selectedFilters.value.join(',') // Convert the array to a comma-separated string
+  };
+
+  // Update the router with the merged query parameters
+  router.push({ query: mergedQuery });
 };
 
 onMounted(() => {
@@ -20,11 +30,9 @@ onMounted(() => {
 
 
 const deliverQueryParams = () => {
-
 }
 
 const filterSections = ref([
-  
     { id: 0, label: "Minijob" },
     { id: 1, label: "Praktikum" },
     { id: 2, label: "DIVIDER" },
@@ -50,31 +58,14 @@ const filterSections = ref([
 const visibleFilterSidebar = ref(false);
 
 // v-model for the checkboxes
-const selectedFilters = ref([]); // Define a reactive array to store selected filters
+const selectedFilters = ref([]); // holds value of all checked checkboxes that represent the tags that get queried
 
 // Watch for changes in selectedFilters array
 watch(selectedFilters, (newValue, oldValue) => {
   console.log('Selected filters:', newValue);
 });
 
-var FilterTags = ref([])
-const valueSliderKM = ref(0);
-
-const addTag = (tag) => {
-  if (!FilterTags.value.includes(tag)) {
-    FilterTags.value.push(tag);
-    console.log(FilterTags)
-  }
-};
-
-const removeTag = (tag) => {
-  const index = FilterTags.value.indexOf(tag);
-  if (index !== -1) {
-    FilterTags.value.splice(index, 1);
-    console.log(FilterTags);
-  }
-};
-
+// const valueSliderKM = ref(0);
 
 defineProps({
   label: String
@@ -110,11 +101,7 @@ defineProps({
 
     <div class="mt-2 mb-2 w-[4/6]"> <!-- Filter Tag Chip Show Area -->
       <div class="w-full flex-wrap"> 
-         <FilterTag 
-         v-for="(tag, index) in FilterTags" 
-         :key="index" 
-         :label="tag" 
-         />
+
       </div>
     </div>
               
@@ -166,11 +153,6 @@ defineProps({
           </div> --->
         </div>
         <div class="mt-2 mb-2 lg:ml-2">
-          <FilterTag 
-          v-for="(tag, index) in FilterTags" 
-          :key="index" 
-          :label="tag" 
-          />
 
         </div>
       </div>
