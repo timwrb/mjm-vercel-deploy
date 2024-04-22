@@ -94,18 +94,42 @@ defineProps({
 
     <div class="mt-2 mb-2 w-[4/6]"> <!-- Filter Tag Chip Show Area -->
       <div class="w-full flex-wrap"> 
-         <FilterTag v-for="(tag, index) in FilterTags" :key="index" :label="tag" @remove="removeTag(tag)"/>
+         <FilterTag 
+         v-for="(tag, index) in FilterTags" 
+         :key="index" 
+         :label="tag" 
+         />
       </div>
     </div>
               
     <div class="ml-2 flex flex-col gap-2 mt-2"> <!-- FilterClickOptions -->
       <!-- Render the JSON Object Informations -->
-      <div v-for="FilterOption of filterSections" :key="FilterOption.id" class="flex items-center">
-        <div v-if="FilterOption.label === 'DIVIDER'" class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
+      <div 
+      v-for="FilterOption of filterSections" 
+      :key="FilterOption.id" 
+      class="flex items-center">
+
+        <div 
+        v-if="FilterOption.label === 'DIVIDER'" 
+        class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4">
+        </div>
         
         <div v-else class="flex items-center gap-2 text-darkGrey100" >
-          <Checkbox trueValue="selected" falseValue="notselected" v-model="selectedFilters" :inputId="FilterOption.id" :name="FilterOption.label" :value="FilterOption.label" />
-          <label class="select-none hover:opacity-60" :for="FilterOption.id">{{ FilterOption.label }}</label>
+          <Checkbox 
+          trueValue="selected" 
+          falseValue="notselected" 
+          v-model="selectedFilters" 
+          :inputId="FilterOption.id" 
+          :name="FilterOption.label" 
+          :value="FilterOption.label" 
+          />
+
+          <label 
+          class="select-none hover:opacity-60" 
+          :for="FilterOption.id">
+          {{ FilterOption.label }}
+          </label>
+          
         </div>
       </div>
     </div>
@@ -125,20 +149,43 @@ defineProps({
           </div> --->
         </div>
         <div class="mt-2 mb-2 lg:ml-2">
-          <FilterTag v-for="(tag, index) in FilterTags" :key="index" :label="tag" @remove="removeTag(tag)"/>
+          <FilterTag 
+          v-for="(tag, index) in FilterTags" 
+          :key="index" 
+          :label="tag" 
+          />
+
         </div>
       </div>
-      <div class="ml-2 flex flex-col gap-2 mt-2"> <!-- FilterClickOptions -->
-        <!-- Render the JSON Object Informations -->
-        <div v-for="(section, index) in filterSections" :key="index">
-          <!-- Überprüfen, ob das Label "DIVIDER" ist -->
-          <div v-if="section.label === 'DIVIDER'" class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
-          <!-- Wenn nicht, rendern Sie das span Element -->
-          <span v-else class="ml-2 font-medium text-[1rem] select-none hover:underline hover:cursor-pointer" @click="addTag(section.label)">
-            {{ section.label }}
-          </span>
+      <div class="ml-2 flex flex-col gap-2 mt-2"> 
+
+        <div 
+        v-for="FilterOption of filterSections" 
+        :key="FilterOption.id" 
+        class="flex items-center">
+
+        <div 
+        v-if="FilterOption.label === 'DIVIDER'" 
+        class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
+        
+        <div v-else class="flex items-center gap-2 text-darkGrey100" >
+          <Checkbox 
+          trueValue="selected" 
+          falseValue="notselected" 
+          v-model="selectedFilters" 
+          :inputId="FilterOption.id" 
+          :name="FilterOption.label" 
+          :value="FilterOption.label" />
+
+          <label 
+          class="select-none hover:opacity-60" 
+          :for="FilterOption.id">
+          {{ FilterOption.label }}
+          </label>
+
         </div>
       </div>
+    </div>
     </div>
     <div class="w-full lg:w-9/12 h-full pl-4 pr-4"> <!-- Result Area -->
       <div class="w-full h-[3.5rem] bg-transparent flex justify-between items-center"> <!-- Top Text Bar Results: / Sort by: ___  -->
@@ -165,6 +212,13 @@ defineProps({
 </div>
 <!-- / Filter Button--> </div>
 
+                        <div class="mb-2 overflow-y-scroll w-full ml-2 mr-2 hidden lg:flex items-center h-full">
+                          <FilterTag 
+                          v-for="(tag, index) in selectedFilters" 
+                          :key="index" 
+                          :label="tag"/>
+                        </div>
+
                         <div class="flex flex-row items-center gap-1"> <!-- Right side -->
                             <select class="hover:bg-almostWhite select select-sm select-bordered md:w-[10rem] w-[8rem] h-[2rem]"> <!-- Selector -->
                             <option>Neuste</option>
@@ -172,7 +226,7 @@ defineProps({
                             <option>Älteste</option>
                             </select>
                         </div>
-                    
+
                     </div> <!--  / Top Text Bar Results: / Sort by: ___  -->
 
                     <div class="gap-4"> <!-- Results Map List -->

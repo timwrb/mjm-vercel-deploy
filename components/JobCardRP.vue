@@ -140,30 +140,42 @@
     <div class="w-full h-[0.5px] bg-darkGrey40 mt-4"></div>
     </AccordionTab>
 </Accordion>
+<!-- MARKDOWN CONTENT-->
 
-    <p class="mb-5 mt-4">
+    <div class="mb-5 mt-4">
       {{ content }}
-    </p>
+    </div>
+
+
 </Dialog>
 
  <!--</a> -->
    <!-- </NuxtLink> -->
 </template>
 
+
 <script setup>
+import { ref } from 'vue';
+// import marked from 'marked';
 
-const visible = ref(false);
 
-  defineProps({
-  id: String,
-  company: String,
-  title: String,
-  date: String,
-  city: String,
-  street: String,
-  salary: String,
-  content: String
-})
+defineProps({
+    id: String,
+    company: String,
+    title: String,
+    date: String,
+    city: String,
+    street: String,
+    salary: String,
+    content: String
+});
+
+    const visible = ref(false);
+
+    // const markdownToHtml = computed(() => {
+    //   return marked(props.content);
+    // });
+
 
 </script>
 
