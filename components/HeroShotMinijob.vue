@@ -5,4 +5,8 @@
       <div class="hidden md:flex btn hover:bg-almostBlack hover:opacity-85 cursor-pointer select-none mt-[1.063rem] w-[13.438rem] h-[3.5rem] bg-almostBlack items-center justify-center flex font-semibold text-[1.5rem] rounded-full text-white">Entdecken</div>
     </div>
   </div>
+
+  <div class="flex lg:hidden ml-4">
+    <span class="font-bold text-[1.5rem] sm:text-[2rem] bg-gradientBlue bg-clip-text text-transparent">Minijobs</span>
+  </div>
 </template>

@@ -17,7 +17,7 @@
 </div>
 
 <div>
-  <div class="flex-col md:flex-row w-full flex justify-center mt-[9.375rem] gap-[5.313rem] items-center">
+  <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
     <HeroShotMinijob />
     <JobCard
       :company="'Shell Tankstellen'"

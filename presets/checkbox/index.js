@@ -32,10 +32,10 @@ export default {
             'border',
 
             // Colors
-            'text-surface-600',
+            'text-darkGrey100',
             {
-                'border-surface-300 bg-surface-0 dark:border-surface-700 dark:bg-surface-900': !context.checked && !props.invalid,
-                'border-primary-500 bg-primary-500 dark:border-primary-400 dark:bg-primary-400': context.checked
+                'border-surface-300 bg-customBlue dark:border-customBlue dark:bg-white': !context.checked && !props.invalid,
+                'border-primary-500 bg-customBlue dark:border-customBlue dark:bg-customBlue': context.checked
             },
 
             // Invalid State
@@ -91,14 +91,14 @@ export default {
     icon: {
         class: [
             // Font
-            'text-normal',
+            'text-bold',
 
             // Size
             'w-3',
             'h-3',
 
             // Colors
-            'text-white dark:text-surface-900',
+            'text-white dark:text-white',
 
             // Transitions
             'transition-all',

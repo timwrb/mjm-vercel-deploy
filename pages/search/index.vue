@@ -7,29 +7,40 @@ const deliverQueryParams = () => {
 
 }
 
-const filterSections = [
-  { id: 1, label: "Minijob" },
-  { id: 2, label: "Praktikum" },
-    { id: 3, label: "DIVIDER" },
-  { id: 4, label: "538€ Basis" },
-  { id: 5, label: "Werkstudent" },
-  { id: 6, label: "Tage Vertrag"},
-    { id: 8, label: "DIVIDER" },
-  { id: 8, label: "Gastronomie" },
-  { id: 9, label: "Kasse" },
-  { id: 10, label: "Soziales"},
-  { id: 11, label: "Sonstiges"},
-    { id: 12, label: "DIVIDER" },
-  { id: 13, label: "Tagsüber" },
-  { id: 14, label: "Wochenends" },
-  { id: 15, label: "Nachtschicht"},
-    { id: 16, label: "DIVIDER"},
-  { id: 17, label: "Über Mindestlohn" },
-    { id: 18, label: "DIVIDER" },
-]
+const filterSections = ref([
+  
+    { id: 0, label: "Minijob" },
+    { id: 1, label: "Praktikum" },
+    { id: 2, label: "DIVIDER" },
+    { id: 3, label: "538€ Basis" },
+    { id: 4, label: "Werkstudent" },
+    { id: 5, label: "Tage Vertrag"},
+    { id: 6, label: "DIVIDER" },
+    { id: 7, label: "Gastronomie" },
+    { id: 8, label: "Kasse" },
+    { id: 9, label: "Soziales"},
+    { id: 10, label: "Sonstiges"},
+    { id: 11, label: "DIVIDER" },
+    { id: 12, label: "Tagsüber" },
+    { id: 13, label: "Wochenends" },
+    { id: 14, label: "Nachtschicht"},
+    { id: 15, label: "DIVIDER"},
+    { id: 16, label: "Über Mindestlohn" },
+    { id: 17, label: "DIVIDER" },
+  ]);
+
 
 
 const visibleFilterSidebar = ref(false);
+
+// v-model for the checkboxes
+const selectedFilters = ref([]); // Define a reactive array to store selected filters
+
+// Watch for changes in selectedFilters array
+watch(selectedFilters, (newValue, oldValue) => {
+  console.log('Selected filters:', newValue);
+});
+
 var FilterTags = ref([])
 const valueSliderKM = ref(0);
 
@@ -66,80 +77,78 @@ defineProps({
                 <div class="w-full lg:hidden">
                     
 <!-- Sidebar Filter -->
-                  <Sidebar v-model:visible="visibleFilterSidebar" >
-      <template #header>
-        <div class="flex items-center">
-          <LOGOmjm />
-        </div>
-      </template>
+<Sidebar v-model:visible="visibleFilterSidebar" >
 
-      <div class="flex justify-center"> <!-- Save Button -->
-        <div class="btn hover:bg-almostBlack hover:opacity-80 font-bold w-[12rem] h-[2rem] mb-4 bg-almostBlack flex items-center justify-center rounded-full" @click="visibleFilterSidebar = false" >
-          <p class="font-semibold text-[1.25rem] text-almostWhite" >Sichern</p>
+  <template #header>
+    <div class="flex items-center">
+      <LOGOmjm />
+    </div>
+  </template>
+  <div>
+    <div class="flex justify-center"> <!-- Save Button -->
+      <div class="btn hover:bg-almostBlack hover:opacity-80 font-bold w-[12rem] h-[2rem] mb-4 bg-almostBlack flex items-center justify-center rounded-full" @click="visibleFilterSidebar = false" >
+        <p class="font-semibold text-[1.25rem] text-almostWhite" >Sichern</p>
+      </div>
+    </div>
+
+
+    <div class="mt-2 mb-2 w-[4/6]"> <!-- Filter Tag Chip Show Area -->
+      <div class="w-full flex-wrap"> 
+         <FilterTag v-for="(tag, index) in FilterTags" :key="index" :label="tag" @remove="removeTag(tag)"/>
+      </div>
+    </div>
+              
+    <div class="ml-2 flex flex-col gap-2 mt-2"> <!-- FilterClickOptions -->
+      <!-- Render the JSON Object Informations -->
+      <div v-for="FilterOption of filterSections" :key="FilterOption.id" class="flex items-center">
+        <div v-if="FilterOption.label === 'DIVIDER'" class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
+        
+        <div v-else class="flex items-center gap-2 text-darkGrey100" >
+          <Checkbox trueValue="selected" falseValue="notselected" v-model="selectedFilters" :inputId="FilterOption.id" :name="FilterOption.label" :value="FilterOption.label" />
+          <label class="select-none hover:opacity-60" :for="FilterOption.id">{{ FilterOption.label }}</label>
         </div>
       </div>
+    </div>
+  </div>
 
-
-      <div class="mt-2 mb-2 w-[4/6]"> <!-- Filter Tag Chip Show Area -->
-        <div class="w-full flex-wrap"> 
+</Sidebar>
+                </div>  
+<!-- Trigger button -->
+<div class="flex justify-center"> <!-- Search / Result Area -->
+  <div class="flex flex-row h-[100rem] w-full xl:w-[70rem] border-t border-darkGrey60">  
+    <div class="hidden lg:flex h-full w-full lg:w-3/12 flex-col pr-4"> <!-- Filter Area > :lg-->
+      <div class="w-full h-fit">
+        <div class="flex items-center">
+          <!-- <div class="flex flex-row gap-4 justify-center w-full items-center mt-4">  Slider Kilometer Range
+              <InputText v-model.number="valueSliderKM" class="w-4/6 flex justify-center ml-2 h-8 w-20"/>
+              <Slider min=0 max=100 v-model="valueSliderKM" class="w-[4rem] border border-px" />
+          </div> --->
+        </div>
+        <div class="mt-2 mb-2 lg:ml-2">
           <FilterTag v-for="(tag, index) in FilterTags" :key="index" :label="tag" @remove="removeTag(tag)"/>
         </div>
       </div>
-                
       <div class="ml-2 flex flex-col gap-2 mt-2"> <!-- FilterClickOptions -->
-                        <!-- Render the JSON Object Informations -->
-        
-      <div v-for="(section, index) in filterSections" :key="index">
-                        <!-- Überprüfen, ob das Label "DIVIDER" ist -->
-      <div v-if="section.label === 'DIVIDER'" class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
-                        <!-- Wenn nicht, rendern Sie das span Element -->
-      <span v-else class="ml-2 font-medium text-[1rem] select-none hover:underline hover:cursor-pointer" @click="addTag(section.label)">{{ section.label }}</span>
-                        </div>
+        <!-- Render the JSON Object Informations -->
+        <div v-for="(section, index) in filterSections" :key="index">
+          <!-- Überprüfen, ob das Label "DIVIDER" ist -->
+          <div v-if="section.label === 'DIVIDER'" class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
+          <!-- Wenn nicht, rendern Sie das span Element -->
+          <span v-else class="ml-2 font-medium text-[1rem] select-none hover:underline hover:cursor-pointer" @click="addTag(section.label)">
+            {{ section.label }}
+          </span>
+        </div>
       </div>
-</Sidebar>
-      <!-- Trigger button -->
-    
-
-</div>
-<!-- / Sidebar Filter -->
-            
-        <div class="flex justify-center"> <!-- Search / Result Area -->
-            <div class="flex flex-row h-[100rem] w-full xl:w-[70rem] border-t border-darkGrey60">  
-                <div class="hidden lg:flex h-full w-full lg:w-3/12 flex-col pr-4"> <!-- Filter Area > :lg-->
-                
-                <div class="w-full h-fit">
-                        <div class="flex items-center">
-                    <!-- <div class="flex flex-row gap-4 justify-center w-full items-center mt-4">  Slider Kilometer Range
-                        <InputText v-model.number="valueSliderKM" class="w-4/6 flex justify-center ml-2 h-8 w-20"/>
-                        <Slider min=0 max=100 v-model="valueSliderKM" class="w-[4rem] border border-px" />
-                    </div> --->
-                        </div>
-                    <div class="mt-2 mb-2 lg:ml-2">
-                        <FilterTag v-for="(tag, index) in FilterTags" :key="index" :label="tag" @remove="removeTag(tag)"/>
-                    </div>
-                </div>
-                    <div class="ml-2 flex flex-col gap-2 mt-2"> <!-- FilterClickOptions -->
-                        <!-- Render the JSON Object Informations -->
-                        <div v-for="(section, index) in filterSections" :key="index">
-                        <!-- Überprüfen, ob das Label "DIVIDER" ist -->
-                        <div v-if="section.label === 'DIVIDER'" class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
-                        <!-- Wenn nicht, rendern Sie das span Element -->
-                        <span v-else class="ml-2 font-medium text-[1rem] select-none hover:underline hover:cursor-pointer" @click="addTag(section.label)">
-                        {{ section.label }}
-                        </span>
-                        </div>
-                </div>
-
-                </div>
-                <div class="w-full lg:w-9/12 h-full pl-4 pr-4"> <!-- Result Area -->
-                    <div class="w-full h-[3.5rem] bg-transparent flex justify-between items-center"> <!-- Top Text Bar Results: / Sort by: ___  -->
-
-<!-- Filter Button --> <div class="flex lg:hidden pr-4 w-full cursor-pointer " @click="visibleFilterSidebar = true" >
+    </div>
+    <div class="w-full lg:w-9/12 h-full pl-4 pr-4"> <!-- Result Area -->
+      <div class="w-full h-[3.5rem] bg-transparent flex justify-between items-center"> <!-- Top Text Bar Results: / Sort by: ___  -->
+        <!-- Filter Button --> 
+        <div class="flex lg:hidden pr-4 w-full cursor-pointer " @click="visibleFilterSidebar = true" >
 
 <div class="bg-transparent hover:bg-almostWhite rounded-lg w-[5rem] h-[2rem] items-center flex border border-darkGrey40 border-[0.5px]">
         <!-- Count Bubble Why tf ever it does not become round)-->
-        <div v-if="FilterTags.length > 0" class="ml-1 rounded-full bg-white border border-darkGrey40 h-6 w-12 text-[0.8rem] font-semibold md:font-medium text-darkGrey100 items-center flex justify-center">
-        {{ FilterTags.length }}
+        <div v-if="selectedFilters.length > 0" class="ml-1 rounded-full bg-white border border-darkGrey40 h-6 w-12 text-[0.8rem] font-semibold md:font-medium text-darkGrey100 items-center flex justify-center">
+        {{ selectedFilters.length }}
         </div>
 
         <div class="flex items-center place-content-between w-full h-full"> <!-- Wrapper for filter right align-->
