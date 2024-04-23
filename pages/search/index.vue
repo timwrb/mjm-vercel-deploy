@@ -84,7 +84,10 @@ defineProps({
                 <div class="w-full lg:hidden">
                     
 <!-- Sidebar Filter -->
-<Sidebar v-model:visible="visibleFilterSidebar" >
+<Sidebar 
+v-model:visible="visibleFilterSidebar" 
+position="bottom"
+>
 
   <template #header>
     <div class="flex items-center">
@@ -144,8 +147,10 @@ defineProps({
 <!-- Trigger button -->
 <div class="flex justify-center"> <!-- Search / Result Area -->
   <div class="flex flex-row h-[100rem] w-full xl:w-[70rem] border-t border-darkGrey60">  
-    <div class="hidden lg:flex h-full w-full lg:w-3/12 flex-col pr-4"> <!-- Filter Area > :lg-->
-      <div class="w-full h-fit">
+
+    <!-- Spacer nach oben mt-10 --><div class="hidden lg:flex h-full mt-10 w-full lg:w-3/12 flex-col pr-4"> <!-- Filter Area > :lg-->
+      
+  <div class="w-full h-fit">
         <div class="flex items-center">
           <!-- <div class="flex flex-row gap-4 justify-center w-full items-center mt-4">  Slider Kilometer Range
               <InputText v-model.number="valueSliderKM" class="w-4/6 flex justify-center ml-2 h-8 w-20"/>
