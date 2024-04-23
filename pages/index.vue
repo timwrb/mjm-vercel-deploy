@@ -46,12 +46,20 @@
 </div>
 
 
-
-<div class="mt-[16rem]">
-
+<section>
+<div class="mt-[8rem]">
+<!-- Header Articles -->
+<div class="flex justify-center mb-4 items-center">
+    <div class="h-px flex-grow bg-gray-300 ml-12 mr-4"></div>
+        <h1 class="font-bold text-[1.5rem] sm:text-[2rem] ">Entdecke Artikel</h1>
+    <div class="h-px flex-grow bg-gray-300 ml-4 mr-12"></div>
+</div>
 <!-- inspired by tailwindcss.com -->
-<ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-12 mb-[6rem] items-start p-8 lg:mr-[10rem] lg:ml-[10rem]">
-    <li class="relative flex flex-col sm:flex-row xl:flex-col items-start">
+
+<ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-8 mb-[6rem] items-start p-8 lg:mr-[10rem] lg:ml-[10rem]">
+    
+    <!-- Card 1-->
+    <li class="border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] hover:p-[1.1rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
         <div class="order-1 sm:ml-6 xl:ml-0">
             <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
                 538€ Vertrag ( Minijob )
@@ -67,15 +75,17 @@
 </svg>
 </a>
         </div>
-        <img src="public/images/kassierer.jpg" alt="" class="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full" width="640" height="446">
+        <img src="public/images/kassierer.jpg" alt="" class="mb-6 shadow-md rounded-[1rem] bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full" width="640" height="446">
     </li>
-    <li class="relative flex flex-col sm:flex-row xl:flex-col items-start">
+
+<!-- Card 2 -->
+    <li class="border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] hover:p-[1.1rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
         <div class="order-1 sm:ml-6 xl:ml-0">
-            <h3 class="mb-1 text-darkGrey100 font-bold text-[1.2rem]">
-                Werkstudent Vertrag
+            <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
+                538€ Vertrag ( Minijob )
             </h3>
             <div class="prose prose-slate prose-sm text-slate-600">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam dolorum voluptates quisquam laudantium officiis exercitationem, aperiam sunt culpa eius doloremque adipisci provident quod eaque, sed quidem ipsam optio. Labore, sapiente!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos earum voluptatum, omnis nesciunt labore pariatur tempore laudantium consectetur ipsa veritatis reiciendis in aliquid aperiam? Aliquam hic quo quisquam maxime explicabo?</p>
             </div><a
                 class="btn btn-sm btn-outline hover:text-darkGrey100 group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none bg-white text-slate-700 hover:bg-almostWhite mt-6"
                 href="">Zum Artikel
@@ -85,15 +95,17 @@
 </svg>
 </a>
         </div>
-        <img src="public/images/kassierer.jpg" alt="" class="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full" width="640" height="446">
+        <img src="public/images/kassierer.jpg" alt="" class="mb-6 shadow-md rounded-[1rem] bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full" width="640" height="446">
     </li>
-    <li class="relative flex flex-col sm:flex-row xl:flex-col items-start">
+
+<!-- Card 3 -->
+<li class="border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] hover:p-[1.1rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
         <div class="order-1 sm:ml-6 xl:ml-0">
-            <h3 class="mb-1 text-darkGrey100 font-bold text-[1.2rem]">
-                Steuerliches & Wissenswertes
+            <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
+                538€ Vertrag ( Minijob )
             </h3>
             <div class="prose prose-slate prose-sm text-slate-600">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum excepturi exercitationem minima, et itaque incidunt nesciunt perferendis beatae amet sequi inventore accusamus rem magnam, voluptatibus nam debitis sed odio. Consectetur?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos earum voluptatum, omnis nesciunt labore pariatur tempore laudantium consectetur ipsa veritatis reiciendis in aliquid aperiam? Aliquam hic quo quisquam maxime explicabo?</p>
             </div><a
                 class="btn btn-sm btn-outline hover:text-darkGrey100 group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none bg-white text-slate-700 hover:bg-almostWhite mt-6"
                 href="">Zum Artikel
@@ -103,11 +115,14 @@
 </svg>
 </a>
         </div>
-        <img src="public/images/kassierer.jpg" alt="" class="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full" width="640" height="446">
+        <img src="public/images/kassierer.jpg" alt="" class="mb-6 shadow-md rounded-[1rem] bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full" width="640" height="446">
     </li>
+
+
 </ul>
 
 </div> 
+</section>
 
 
 
