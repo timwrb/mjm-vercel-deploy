@@ -226,7 +226,7 @@ position="bottom"
                         </div>
 
                         <div class="flex flex-row items-center gap-1"> <!-- Right side -->
-                            <select class="hover:bg-almostWhite select select-sm select-bordered md:w-[10rem] w-[8rem] h-[2rem]"> <!-- Selector -->
+                            <select class="hover:bg-white bg-transparent select select-sm select-bordered md:w-[10rem] w-[8rem] h-[2rem]"> <!-- Selector -->
                             <option>Neuste</option>
                             <option>Meist gesehen</option>
                             <option>Älteste</option>

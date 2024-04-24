@@ -35,6 +35,28 @@ export default defineNuxtConfig({
     ],
     theme: {
       extend: {
+        keyframes: {
+          typing: {
+            "0%": {
+              width: "0%",
+              visibility: "hidden"
+            },
+            "100%": {
+              width: "100%"
+            }
+          },
+          blink: {
+            "50%": {
+              borderColor: "transparent"
+            },
+            "100%": {
+              borderColor: "white"
+            }
+          }
+        },
+        animation: {
+          typing: "typing 3s steps(20) infinite alternate, blink .7s infinite"
+        },
           backgroundImage: {
             "gradientBlue": 'linear-gradient(180deg, #6CCFF6 -9.3%, #1E1E1E 88.6%)',
             "gradientBrown": 'linear-gradient(0deg, #70798C -28.15%, #947B56 52.23%)',
@@ -49,6 +71,9 @@ export default defineNuxtConfig({
         customBlueDarker: '#6ccff6',
         almostBlack: '#0f0f0f',
         almostWhite: '#F7F7F7',
+
+        customBlue10: '#F0FAFE',
+        customBlue20: '#E2F5FD',
 
           'primary-50': 'rgb(var(--primary-50))',
           'primary-100': 'rgb(var(--primary-100))',

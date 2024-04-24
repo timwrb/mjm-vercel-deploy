@@ -1,4 +1,9 @@
 <template>
+
+    <div class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
+      <div
+  class=" inset-0 w-full bg-transparent bg-[radial-gradient(#E7EAF0_1px,transparent_1px)] [background-size:16px_16px]"
+>
 <div>
     <div class="flex justify-center"> <!-- Wrapper w -->
     <div class="w-full md:w-[80%] lg:w-[80%]"> <!-- Wrapper w -->
@@ -85,8 +90,8 @@
     </NuxtLink> -->
 
     <div @click="visibleLoginModal = true">
-      <div class="flex items-center justify-center bg-white hover:opacity-80 ">
-        <button class="btn btn-md flex items-center bg-white border border-gray-300 rounded-lg px-6 text-sm font-medium text-black focus:outline-none">
+      <div class="flex items-center justify-center bg-transparent backdrop-blur-[10rem] hover:opacity-80 ">
+        <button class="btn btn-md flex items-center bg-transparent border border-gray-300 rounded-lg px-6 text-sm font-medium text-black focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             </svg>
@@ -105,7 +110,7 @@
         <slot />
     </div>
 <div class="w-full h-[0.5px] bg-darkGrey40"></div>
-    <footer class="footer p-10 bg-transparent text-base-content">
+    <footer class="footer p-10 bg-transparent backdrop-blur-xl text-base-content">
   <aside>
     <div class="flex flex-col gap-[0.5rem]">
                 <div class="mt-[0.5rem] select-none cursor-pointer">   
@@ -141,6 +146,10 @@
 </footer>
 
 </div>
+
+</div> 
+</div>
+<!-- Background -->
 </template>
 
 <script setup>
@@ -149,3 +158,26 @@ import { ref } from 'vue';
 const visible = ref(false);
 const visibleLoginModal = ref(false);
 </script>
+
+<style scoped>
+
+.animated-background {
+    background-size: 400%;
+
+    -webkit-animation: animation 6s ease infinite;
+    -moz-animation: animation 6s ease infinite;
+    animation: animation 6s ease infinite;
+}
+
+@keyframes animation {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    
+    50% {
+        background-position: 100% 50%;
+    }
+}
+</style>
+

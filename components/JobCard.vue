@@ -2,7 +2,7 @@
 w-[46.375rem] h-[12.625rem] bg-almostWhite shadow-xl hover:-translate-y-1 transition-transform duration-150 ease-in-out
 <template>
       <div class="justify-center flex">
-        <div class="w-full lg:w-[46.375rem] bg-almostWhite shadow-xl rounded-[2rem] cursor-pointer lg:transform lg:hover:-translate-y-1 transition-transform duration-150 ease-in-out">
+        <div class="w-full lg:w-[46.375rem] border border-gray-300 bg-transparent backdrop-blur-[10rem] boxShadowSquared rounded-[2rem] cursor-pointer lg:transform lg:hover:-translate-y-1 transition-transform duration-150 ease-in-out">
           <div class="flex">
             <div class="hidden sm:flex border border-px border-darkGrey40 rounded-[1.5rem] sm:mt-[1.875rem] ml-[2rem] h-[4rem] w-[4rem] bg-white"></div>
           <div class="flex flex-col ml-[1.75rem] mt-[1.0rem] sm:mt-[2.375rem]">
@@ -32,7 +32,7 @@ w-[46.375rem] h-[12.625rem] bg-almostWhite shadow-xl hover:-translate-y-1 transi
       </div>
 
         <!-- street -->
-        <div class="hidden sm:flex h-[1.7rem] lg:h-[2.188rem] sm:mr-[0] mb-[0.7rem] rounded-full border-[0.05rem] sm:border-[0.08rem] border-darkGrey100 bg-white justify-center flex items-center">
+        <div class=" h-[1.7rem] lg:h-[2.188rem] sm:mr-[0] mb-[0.7rem] rounded-full border-[0.05rem] sm:border-[0.08rem] border-darkGrey100 bg-white justify-center flex items-center">
       <span class="ml-3 mr-3 text-customBlue font-medium text-[0.75rem] sm:text-[0.825rem] lg:text-[0.9rem]">{{ street }}</span>
       </div>
 
@@ -70,3 +70,8 @@ w-[46.375rem] h-[12.625rem] bg-almostWhite shadow-xl hover:-translate-y-1 transi
   
   </script>
   
+  <style scoped>
+  .boxShadowSquared {
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.1);
+}
+  </style>

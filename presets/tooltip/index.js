@@ -16,7 +16,7 @@ export default {
     text: {
         class: [
             // Size
-            'text-xs leading-none',
+            'text-sm leading-none',
 
             // Spacing
             'p-2',
@@ -25,8 +25,8 @@ export default {
             'rounded-md',
 
             // Color
-            'text-surface-900 dark:text-surface-0/80',
-            'bg-surface-0 dark:bg-surface-900',
+            'text-surface-900 dark:text-darkGrey100',
+            'bg-surface-0 dark:bg-white',
             'ring-1 ring-inset ring-surface-200 dark:ring-surface-800 ring-offset-0',
 
             // Misc
