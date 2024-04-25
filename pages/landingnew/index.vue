@@ -1,4 +1,4 @@
-<template>         
+<template>        
             <HeroShotTypeWriter />
 
     <div class="flex justify-center w-full mb-[4rem]">
@@ -6,7 +6,7 @@
     </div>
 
 <div>
-  <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
+  <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[7rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
     <HeroShotMinijob />
     <JobCard
       :company="'Shell Tankstellen'"
@@ -19,7 +19,7 @@
   </div>
 
 
-<div class="flex-col md:flex-row w-full flex justify-center mt-[9.375rem] gap-[5.313rem] items-center">
+<div class="flex-col md:flex-row w-full flex justify-center mt-[7rem] gap-[5.313rem] items-center">
 <JobCard
       :company="'Shell Tankstellen'"
       :title="'Aushilfe Shell Tankstelle 538€ Basis (m / w / d)'"
@@ -113,18 +113,10 @@
 </section>
 
 
-
 <div>
-
 
 </div>
 <ScrollTop class="hidden lg:flex bg-black"/>
-
-
-
-
-
-
 
 </template>
 
@@ -150,5 +142,24 @@ export default {
 <style scoped>
 .boxShadowSquared {
 box-shadow: 0 0 4rem rgba(0, 0, 0, 0.1);
+}
+
+.animated-background {
+    background-size: 400%;
+
+    -webkit-animation: animation 6s ease infinite;
+    -moz-animation: animation 6s ease infinite;
+    animation: animation 6s ease infinite;
+}
+
+@keyframes animation {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    
+    50% {
+        background-position: 100% 50%;
+    }
 }
 </style>

@@ -6,17 +6,21 @@ class="typed-text bg-gradientBlue text-transparent bg-clip-text ml-2"
       <div class="md:mt-[5rem] mt-[3.75rem] w-full lg:w-9/12  text-[1.5rem] sm:text-[2.2rem] md:text-[3rem] font-extrabold">
     <div class="flex-col md:flex-row">
 
-        <div class="justify-center flex items-center">
+        <div class="justify-center flex flex-col md:flex-row items-center">
         <h1 class="flex text-darkGrey100">Entdecke die besten </h1>
           <!-- Typewriter classes -->
+              <div class="flex flex-row items-center">
                 <h1 :class="typeClass">{{ typeValue }}</h1>
                 <span class="blinking-cursor text-darkGrey100 font-light opacity-40 text-[2.5rem] sm:text-[3.6rem] md:text-[5rem]">|</span>
                 <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
+              </div>
           <!-- / END Typewriter classes -->
       </div>
 
       <div class="flex justify-center mb-[1.5rem]"> <!-- Small Text -->
-        <h2 class="w-3/4 text-center font-medium text-gray-700 text-[0.65rem] sm:text-[0.8rem] md:text-[1rem]">minijobMatch bietet kleineren tätigkeiten Raum sowie normale 538€ Basis Jobs, Werkstudenten Jobs und Praktika. Wenn du als Schüler oder Student geld brauchst, bist du hier genau richtig</h2>
+        <h2 class="w-3/4 text-center font-normal text-gray-700 text-[0.65rem] sm:text-[0.8rem] md:text-[1.3rem]">
+          Egal ob Schüler, Student oder Berufseinsteiger, Hier findest du die besten Minijobs und Praktika
+        </h2>
       </div>
 
         <div class="justify-center flex">

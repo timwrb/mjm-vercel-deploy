@@ -1,9 +1,6 @@
 <template>
 
-    <div class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
-      <div
-  class=" inset-0 w-full bg-transparent bg-[radial-gradient(#E7EAF0_1px,transparent_1px)] [background-size:16px_16px]"
->
+  <div class="relative h-screen w-full bg-transparent"><div class="-z-50 absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 <div>
     <div class="flex justify-center"> <!-- Wrapper w -->
     <div class="w-full md:w-[80%] lg:w-[80%]"> <!-- Wrapper w -->
@@ -148,7 +145,6 @@
 </div>
 
 </div> 
-</div>
 <!-- Background -->
 </template>
 

@@ -1,4 +1,5 @@
 <template>
+    <div class="absolute top-0 z-[-2] h-screen w-screen bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(226,245,253,1),rgba(255,255,255,0))]"></div>
   <NuxtLoadingIndicator />
   <div class="">
 
@@ -31,8 +32,11 @@
 
 
 
-<div class="flex-col md:flex-row w-full flex justify-center mt-[9.375rem] gap-[5.313rem] items-center">
-<JobCard
+  <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
+
+    <HeroShotIntern />
+    
+    <JobCard
       :company="'Shell Tankstellen'"
       :title="'Aushilfe Shell Tankstelle 538€ Basis (m / w / d)'"
       :date="'14 März, 2024'"
@@ -40,7 +44,9 @@
       :street="'Schweinfurter Straße'"
       :salary="'12,50€'"
     />
-    <HeroShotIntern />
+    <div class="hidden lg:flex">
+    <HeroShotIntern /></div>
+    
 </div>
 
 </div>

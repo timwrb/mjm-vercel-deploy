@@ -8,7 +8,9 @@
     </div>
   </div>
 
-  <div class="flex lg:hidden ml-4">
-    <span class="font-bold text-[1.5rem] sm:text-[2rem] bg-gradientBlue bg-clip-text text-transparent">Minijobs</span>
+  <div class="flex lg:hidden ml-6 items-center">
+    <div class="hidden sm:flex h-px w-[4rem] bg-gray-300 ml-4 mr-8 mt-1"></div>
+    <span class=" font-bold text-[2rem] sm:text-[2.5rem] bg-gradientBlue bg-clip-text text-transparent">Minijobs</span>
+    <div class="h-px flex-grow bg-gray-300 ml-4 mr-8 mt-1"></div>
   </div>
 </template>

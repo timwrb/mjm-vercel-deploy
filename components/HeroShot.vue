@@ -13,6 +13,7 @@
           <span class="bg-gradientBrown text-transparent bg-clip-text ml-2"> Praktikum</span>
         </div>
     </div>
+
       </div>
       </div>
 </template>
