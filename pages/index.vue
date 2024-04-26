@@ -1,17 +1,23 @@
 <template>
-    <div class="absolute top-0 z-[-2] h-screen w-screen bg-transparent bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(226,245,253,1),rgba(255,255,255,0))]"></div>
   <NuxtLoadingIndicator />
   <div class="">
+<!-- Left Gradient Light Bulb-->
+    <div class="hidden lg:flex">
+   <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem] -z-10"></div>
+</div>
+<!-- Right Gradient Light Bulb -->
+<div class="hidden xl:flex">
+   <div class="ml-[68.75rem] absolute justify-center h-[22rem] -z-10">
+  <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem]"></div>
+</div>
 
-  <!-- <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem] -z-10"></div> -->
+</div>
     <div class="">
 <HeroShot />
     </div>
-    <!--
-<div class="ml-[68.75rem] absolute justify-center h-[22rem] -z-10">
-  <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem]"></div>
-</div>
--->
+    
+
+
 
 <div class="flex justify-center mt-[4rem] lg:mt-[6.25rem]">
 <SearchBar />
@@ -19,7 +25,22 @@
 
 <div>
   <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
-    <HeroShotMinijob />
+    <!-- Minijob Shot Desktop -->
+    <div class="hidden lg:flex">
+        <div class="flex-col flex justify-start md:justify-center items-center">
+      <span class="font-bold text-[3rem] bg-gradientBlue bg-clip-text text-transparent">Minijobs</span>
+        <NuxtLink to="/search?searchTerm=&city=&tags=Minijob">
+          <div class="hidden md:flex btn hover:bg-almostBlack hover:opacity-85 cursor-pointer select-none mt-[1.063rem] w-[13.438rem] h-[3.5rem] bg-almostBlack items-center justify-center flex font-medium text-[1.5rem] rounded-full text-white">Entdecken</div>
+        </NuxtLink>
+    </div>
+  </div>
+  <!-- Minijob Shot Mobile -->
+  <div class="flex lg:hidden ml-6 items-center">
+    <div class="hidden sm:flex h-px w-[4rem] bg-gray-300 ml-4 mr-8 mt-1"></div>
+    <span class=" font-bold text-[2rem] sm:text-[2.5rem] bg-gradientBlue bg-clip-text text-transparent">Minijobs</span>
+    <div class="h-px flex-grow bg-gray-300 ml-4 mr-8 mt-1"></div>
+  </div>
+
     <JobCard
       :company="'Shell Tankstellen'"
       :title="'Aushilfe Shell Tankstelle 538€  Basis (m / w / d)'"
@@ -32,9 +53,13 @@
 
 
 
-  <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
-
-    <HeroShotIntern />
+  <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[5rem] md:mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
+<!-- Internshot Mobile -->
+        <div class="flex lg:hidden mr-6 items-center">
+            <div class="h-px flex-grow bg-gray-300 ml-4 mr-8 mt-1"></div>
+                <span class=" font-bold text-[2rem] sm:text-[2.5rem] bg-gradientBrown bg-clip-text text-transparent">Praktikum</span>
+            <div class="hidden sm:flex h-px w-[4rem] bg-gray-300 ml-4 mr-8 mt-1"></div>
+        </div>
     
     <JobCard
       :company="'Shell Tankstellen'"
@@ -44,8 +69,15 @@
       :street="'Schweinfurter Straße'"
       :salary="'12,50€'"
     />
-    <div class="hidden lg:flex">
-    <HeroShotIntern /></div>
+    <!-- Internshot Desktop -->
+        <div class="hidden lg:flex">
+              <div class="flex-col flex justify-start md:justify-center items-center">
+                <span class="font-bold text-[3rem] bg-gradientBrown bg-clip-text text-transparent">Praktikum</span>
+                    <NuxtLink to="/search?searchTerm=&city=&tags=Praktikum">
+                        <div class="hidden md:flex btn hover:bg-almostBlack hover:opacity-85 cursor-pointer select-none mt-[1.063rem] w-[13.438rem] h-[3.5rem] bg-almostBlack items-center justify-center flex font-medium text-[1.5rem] rounded-full text-white">Entdecken</div>
+                    </NuxtLink>
+              </div>
+        </div>
     
 </div>
 

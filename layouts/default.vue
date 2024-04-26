@@ -1,6 +1,6 @@
 <template>
 
-  <div class="relative h-screen w-full bg-transparent"><div class="-z-50 absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+  
 <div>
     <div class="flex justify-center"> <!-- Wrapper w -->
     <div class="w-full md:w-[80%] lg:w-[80%]"> <!-- Wrapper w -->
@@ -144,7 +144,7 @@
 
 </div>
 
-</div> 
+
 <!-- Background -->
 </template>
 

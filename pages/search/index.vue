@@ -29,8 +29,6 @@ onMounted(() => {
 })
 
 
-const deliverQueryParams = () => {
-}
 
 const filterSections = ref([
     { id: 0, label: "Minijob" },
