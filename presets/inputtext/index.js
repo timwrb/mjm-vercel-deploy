@@ -2,7 +2,7 @@ export default {
     root: ({ props, context, parent }) => ({
         class: [
             // Font
-            'font-sans leading-6',
+            'leading-6',
 
             // Flex
             { 'flex-1 w-[1%]': parent.instance.$name == 'InputGroup' },
@@ -22,7 +22,7 @@ export default {
             'shadow-sm',
             { 'ring-1 ring-inset ring-offset-0': parent.instance.$name !== 'InputGroup' },
 
-            { 'ring-darkGrey100 dark:ring-darkGrey40': !props.invalid },
+            { 'ring-darkGrey100 dark:ring-gray-300': !props.invalid },
 
             // Invalid State
             { 'ring-red-500 dark:ring-red-400': props.invalid },

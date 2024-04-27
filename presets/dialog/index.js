@@ -17,7 +17,7 @@ export default {
 
             // Color
             'dark:border',
-            'dark:border-surface-700',
+            'dark:border-none',
 
             // Maximized State
             {

@@ -15,11 +15,11 @@ export default {
 
             // Shape
             'border-0 dark:border',
-            'shadow-md rounded-md',
+            'shadow-md rounded-full',
 
             // Colors
-            'bg-surface-0 dark:bg-surface-900',
-            'text-surface-700 dark:text-white/80',
+            'bg-surface-0 dark:bg-almostWhite',
+            'text-surface-700 dark:darkGrey100',
             'dark:border-surface-700'
         ]
     },
@@ -58,16 +58,16 @@ export default {
         ]
     }),
     showicon: {
-        class: ['absolute top-1/2 right-3 -mt-2 z-10', 'text-surface-600 dark:text-white/70']
+        class: ['absolute top-1/2 right-3 -mt-2 z-10', 'text-customBlue dark:customBlue']
     },
     hideicon: {
-        class: ['absolute top-1/2 right-3 -mt-2 z-10', 'text-surface-600 dark:text-white/70']
+        class: ['absolute top-1/2 right-3 -mt-2 z-10', 'text-customBlue dark:customBlue']
     },
     input: {
         root: ({ props, context, parent }) => ({
             class: [
                 // Font
-                'font-sans leading-6',
+                'leading-6',
 
                 // Flex
                 { 'flex-1 w-[1%]': parent.instance.$name == 'InputGroup' },
@@ -82,19 +82,19 @@ export default {
                 'w-full',
 
                 // Colors
-                'text-surface-900 dark:text-surface-0',
+                'text-surface-900 dark:text-darkGrey100',
                 'placeholder:text-surface-400 dark:placeholder:text-surface-500',
-                'bg-surface-0 dark:bg-surface-900',
+                'bg-surface-0 dark:bg-almostWhite',
                 'shadow-sm',
                 { 'ring-1 ring-inset ring-offset-0': parent.instance.$name !== 'InputGroup' },
 
-                { 'ring-surface-300 dark:ring-surface-700': !parent.props.invalid },
+                { 'ring-surface-300 dark:ring-gray-300': !parent.props.invalid },
 
                 // Invalid State
                 { 'ring-red-500 dark:ring-red-400': parent.props.invalid },
 
                 // Shape
-                { 'rounded-md': parent.instance.$name !== 'InputGroup' },
+                { 'rounded-full': parent.instance.$name !== 'InputGroup' },
                 { 'first:rounded-l-md rounded-none last:rounded-r-md': parent.instance.$name == 'InputGroup' },
                 { 'border-0 border-y border-l last:border-r border-surface-300 dark:border-surface-600': parent.instance.$name == 'InputGroup' },
                 { 'first:ml-0 -ml-px': parent.instance.$name == 'InputGroup' && !props.showButtons },
@@ -102,7 +102,7 @@ export default {
 
                 // Interactions
                 {
-                    'outline-none focus:ring-primary-500 dark:focus:ring-primary-400': !context.disabled,
+                    'outline-none focus:ring-primary-500 dark:focus:ring-customBlue': !context.disabled,
                     'opacity-60 select-none pointer-events-none cursor-default': context.disabled
                 }
             ]
