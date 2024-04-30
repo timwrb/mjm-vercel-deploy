@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class tag extends Model
 {
@@ -16,5 +17,10 @@ class tag extends Model
     public function jobposts(): BelongsToMany
     {
         return $this->belongsToMany(jobpost::class);
+    }
+
+    public function company(): BelongsToMany
+    {
+        return $this->belongsToMany(Company::class);
     }
 }

@@ -9,4 +9,7 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateJobpost extends CreateRecord
 {
     protected static string $resource = JobpostResource::class;
+
+
+
 }

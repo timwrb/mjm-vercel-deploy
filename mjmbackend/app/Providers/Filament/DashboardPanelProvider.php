@@ -5,7 +5,6 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\Tenancy\EditTeamProfile;
 use App\Filament\Pages\Tenancy\RegisterTeam;
 use App\Models\Company;
-use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -21,42 +20,38 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Jeffgreco13\FilamentBreezy\BreezyCore;
 
-class AdminPanelProvider extends PanelProvider
+class DashboardPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
 
-            ->readOnlyRelationManagersOnResourceViewPagesByDefault(false)
-            ->brandLogo(asset('images/mjmAdminDark.svg'))
-            ->darkModeBrandLogo(asset('images/mjmAdminLight.svg'))
-            ->darkMode(true)
-            ->defaultThemeMode(ThemeMode::Dark)
-            ->default()
-            ->id('admin')
-            ->path('admin')
+            ->brandLogo(asset('images/mjmCompanyLight.svg'))
+            ->darkModeBrandLogo(asset('images/mjmCompanyDark.svg'))
+            ->id('dashboard')
+            ->path('dashboard')
             ->login()
+            ->registration()
             ->passwordReset()
             ->emailVerification()
-            ->font('Manrope')
             ->colors([
-                'primary' => '#D73A4C',
+                'primary' => '#4A7D91',
                 'gray' => '#514f4f',
                 'info' => '#f7f7f7',
                 'success' => Color::Green,
                 'warning' => Color::Amber,
                 'danger' => '#de3163',
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/Dashboard/Resources'), for: 'App\\Filament\\Dashboard\\Resources')
+            ->discoverPages(in: app_path('Filament/Dashboard/Pages'), for: 'App\\Filament\\Dashboard\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Dashboard/Widgets'), for: 'App\\Filament\\Dashboard\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
+                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -72,7 +67,8 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ;
-
+            ->tenant(Company::class, ownershipRelationship: 'company', slugAttribute: 'name')
+            ->tenantProfile(EditTeamProfile::class)
+            ->tenantRegistration(RegisterTeam::class);
     }
 }

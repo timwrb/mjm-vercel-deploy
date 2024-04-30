@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('address_id')->constrained()->cascadeOnDelete();
             $table->boolean('visible')->default(true);
             $table->boolean('active')->default(true);
+            $table->boolean('payed')->default(false);
             $table->string('duration')->nullable();
             $table->timestamps();
 
@@ -26,7 +27,7 @@ return new class extends Migration
         Schema::create('intern_post_tag', function (Blueprint $table) {
             $table->id();
             $table->foreignId('internpost_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('interntag_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('intern_tag_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

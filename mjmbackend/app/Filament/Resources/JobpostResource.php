@@ -59,17 +59,17 @@ class JobpostResource extends Resource
                 ]),
                 Forms\Components\Section::make('Adresse')
                     ->schema([
-                        Forms\Components\TextInput::make('zip_name')->label('PLZ')
+                        Forms\Components\TextInput::make('address.zip_name')->label('PLZ')
                             ->required(),
-                        Forms\Components\TextInput::make('name_city')->label('Stadt')
+                        Forms\Components\TextInput::make('address.name_city')->label('Stadt')
                             ->required(),
-                        Forms\Components\TextInput::make('name_state')->label('State')
+                        Forms\Components\TextInput::make('address.name_state')->label('State')
                             ->required(),
-                        Forms\Components\TextInput::make('street_name')->label('Straße')
+                        Forms\Components\TextInput::make('address.street_name')->label('Straße')
                             ->required(),
-                        Forms\Components\TextInput::make('housenumber_name')->label('Hausnummer')
+                        Forms\Components\TextInput::make('address.housenumber_name')->label('Hausnummer')
                             ->required(),
-                        Forms\Components\TextInput::make('address_addition')->label('Addition')
+                        Forms\Components\TextInput::make('address.address_addition')->label('Addition')
                             ->required(),
                     ]),
 

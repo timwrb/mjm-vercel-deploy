@@ -18,5 +18,10 @@ class address extends Model
         'house_nr',
         'address_addition',
     ];
+
+    public function companies(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
 
