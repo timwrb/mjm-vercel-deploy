@@ -1,13 +1,15 @@
 <template>
-    <div class="flex w-full h-full bg-companyDarkGrey">
+    <div class="CompanyBG absolute w-screen h-full pointer-events-none"></div>
+
+    <div class="flex w-full h-full bg-transparent z-10">
         <div class="flex flex-col w-full h-full justify-center items-center mb-[6rem]">
 
-    <!-- Hero Section --> <div class="md:mt-[5rem] mt-[3.75rem] w-full lg:w-9/12  text-[1.7rem] sm:text-[2.2rem] md:text-[3rem] font-extrabold">
-        <div class="justify-center flex flex-col md:flex-row items-center">
-        <h1 class="flex text-gray-200">Die beste Zielgruppe für </h1>
+    <!-- Hero Section --> <div class="z-20 md:mt-[3rem] mt-[3.75rem] w-full lg:w-9/12  text-[1.7rem] sm:text-[2.2rem] md:text-[3rem] font-extrabold">
+        <div class="justify-center flex flex-col md:flex-row items-center ">
+        <h1 class="flex text-gray-200 drop-shadow-xl">Die beste Zielgruppe für </h1>
           <!-- Typewriter classes -->
               <div class="flex flex-row items-center">
-                <h1 :class="typeClass">{{ typeValue }}</h1>
+                <h1 :class="typeClass" class="z-20 white-shadow-xl bg-transparent">{{ typeValue }}</h1>
                 <span class="blinking-cursor text-darkGrey100 font-light opacity-40 text-[2.5rem] sm:text-[3.6rem] md:text-[5rem]">|</span>
                 <span class="cursor" :class="{ typing: typeStatus }">&nbsp;</span>
               </div>
@@ -15,17 +17,17 @@
       </div>
 
     </div>
-<NuxtLink to="http://127.0.0.1:8000/dashboard">
-    <div class="mt-[1rem]"> <!-- Company Panel/Dashboard Card -->
-        <div class="transition-all duration-200 ease-in-out group flex h-[4rem] rounded-full bg-companyLightGrey border border-companyBorderGrey items-center justify-center px-8 hover:border-customBlue hover:shadow-xl cursor-pointer">
-            <h1 class="font-semibold text-white mr-2">
+<NuxtLink to="http://127.0.0.1:8000/dashboard" class="z-20">
+    <div class="mt-[1rem] z-20"> <!-- Company Panel/Dashboard Card -->
+        <div class="transition-all duration-200 ease-in-out group flex h-[3rem] rounded-full bg-companyLightGrey bg-opacity-80 backdropblur-[1rem] border border-companyBorderGrey items-center justify-center px-8 hover:border-customBlue hover:shadow-xl cursor-pointer">
+            <h1 class="font-semibold text-white mr-2 text-[1.1rem]">
                 Erstelle jetzt ein Unternehmensprofil
             </h1>
             <svg class="hidden group-hover:flex transition-all duration-200 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 1.5C15.8284 1.5 16.5 2.17157 16.5 3L16.5 16.5C16.5 17.3284 15.8284 18 15 18H9C8.17157 18 7.5 17.3284 7.5 16.5V12.75C7.5 12.3358 7.16421 12 6.75 12C6.33579 12 6 12.3358 6 12.75V16.5C6 18.1569 7.34315 19.5 9 19.5H15C16.6569 19.5 18 18.1569 18 16.5L18 3C18 1.34315 16.6569 -8.9407e-08 15 0L9 2.68221e-07C7.34315 3.12924e-07 6 1.34315 6 3V6.75C6 7.16421 6.33579 7.5 6.75 7.5C7.16421 7.5 7.5 7.16421 7.5 6.75V3C7.5 2.17157 8.17157 1.5 9 1.5L15 1.5ZM9.96967 6.21967C9.67677 6.51256 9.67677 6.98744 9.96967 7.28033L11.6893 9L0.749999 9C0.335785 9 -1.43051e-06 9.33579 -1.43051e-06 9.75C-1.43051e-06 10.1642 0.335785 10.5 0.749999 10.5L11.6893 10.5L9.96967 12.2197C9.67678 12.5126 9.67678 12.9874 9.96967 13.2803C10.2626 13.5732 10.7374 13.5732 11.0303 13.2803L14.0303 10.2803C14.3232 9.98744 14.3232 9.51256 14.0303 9.21967L11.0303 6.21967C10.7374 5.92678 10.2626 5.92678 9.96967 6.21967Z" fill="white"/></svg>
         </div>
     </div>
 </NuxtLink>
-<!-- Pricing Cards --><div class="mt-[4rem] px-12 py-8 border border-companyBorderGrey rounded-[1rem] flex flex-col md:flex-row gap-8 bg-companyLightGrey shadow-gray-900/20">
+<!-- Pricing Cards --><div class="z-20 mt-[4rem] px-12 py-8 border border-companyBorderGrey rounded-[1rem] flex flex-col md:flex-row gap-8 bg-companyLightGrey shadow-gray-900/20">
 
 
 <div
@@ -313,6 +315,15 @@ export default {
 </script>
 
 <style scoped>
+.CompanyBG {
+    background: linear-gradient(215deg, rgba(0, 0, 0, 0.00) 24.7%, #4D8399 27.83%, rgba(0, 0, 0, 0.00) 33.01%);
+filter: blur(400px);
+}
+
+.white-shadow-xl {
+  text-shadow: 6px 6px 25px 0px rgba(255, 255, 255, 0.8);
+}
+
 .blinking-cursor {
   font-weight: 100;
   color: #2c3e50;

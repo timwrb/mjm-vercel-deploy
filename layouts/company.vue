@@ -1,7 +1,7 @@
 <template>
 
-  <div class="bg-companyDarkGrey text-white">
-<div class="bg-companyDarkGrey">
+  <div class="bg-companyDarkGrey -z-20 text-white">
+<div class="bg-companyDarkGrey -z-20">
     <div class="flex justify-center"> <!-- Wrapper w -->
     <div class="w-full md:w-[80%] lg:w-[80%] bg-companyDarkGrey"> <!-- Wrapper w -->
 
@@ -86,16 +86,14 @@
       <a class="btn btn-md bg-white border-gray-300">Anzeige Schalten</a>
     </NuxtLink> -->
 
-    <div @click="visibleLoginModal = true">
+    <NuxtLink to="http://127.0.0.1:8000/dashboard">
       <div class="flex items-center justify-center bg-transparent backdrop-blur-[10rem] hover:opacity-80 ">
-        <button class="btn btn-md hover:bg-transparent flex items-center bg-transparent border border-gray-300 rounded-lg px-6 text-sm font-medium text-black focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            </svg>
-          <span class="text-gray-500">Anmelden</span>
+        <button class="btn btn-md hover:bg-transparent flex items-center bg-transparent border border-[0.5px] border-gray-300 rounded-lg px-6 text-sm font-medium text-black focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 1.5C15.8284 1.5 16.5 2.17157 16.5 3L16.5 16.5C16.5 17.3284 15.8284 18 15 18H9C8.17157 18 7.5 17.3284 7.5 16.5V12.75C7.5 12.3358 7.16421 12 6.75 12C6.33579 12 6 12.3358 6 12.75V16.5C6 18.1569 7.34315 19.5 9 19.5H15C16.6569 19.5 18 18.1569 18 16.5L18 3C18 1.34315 16.6569 -8.9407e-08 15 0L9 2.68221e-07C7.34315 3.12924e-07 6 1.34315 6 3V6.75C6 7.16421 6.33579 7.5 6.75 7.5C7.16421 7.5 7.5 7.16421 7.5 6.75V3C7.5 2.17157 8.17157 1.5 9 1.5L15 1.5ZM9.96967 6.21967C9.67677 6.51256 9.67677 6.98744 9.96967 7.28033L11.6893 9L0.749999 9C0.335785 9 -1.43051e-06 9.33579 -1.43051e-06 9.75C-1.43051e-06 10.1642 0.335785 10.5 0.749999 10.5L11.6893 10.5L9.96967 12.2197C9.67678 12.5126 9.67678 12.9874 9.96967 13.2803C10.2626 13.5732 10.7374 13.5732 11.0303 13.2803L14.0303 10.2803C14.3232 9.98744 14.3232 9.51256 14.0303 9.21967L11.0303 6.21967C10.7374 5.92678 10.2626 5.92678 9.96967 6.21967Z" fill="white"/></svg>
+          <span class="text-white">Dashboard</span>
         </button>
       </div>
-    </div>
+    </NuxtLink>
 
     <LoginModal v-model:visible="visibleLoginModal" />
   </div>
