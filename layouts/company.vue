@@ -1,9 +1,9 @@
 <template>
 
-  
-<div>
+  <div class="bg-companyDarkGrey text-white">
+<div class="bg-companyDarkGrey">
     <div class="flex justify-center"> <!-- Wrapper w -->
-    <div class="w-full md:w-[80%] lg:w-[80%]"> <!-- Wrapper w -->
+    <div class="w-full md:w-[80%] lg:w-[80%] bg-companyDarkGrey"> <!-- Wrapper w -->
 
     <div class="navbar bg-transparent">
   <div class="navbar-start">
@@ -14,7 +14,7 @@
           <LOGOmjmEB />
         </div>
       </template>
-<div class="flex flex-col gap-2 bg-transparent rounded-xl p-4">
+<div class="flex flex-col gap-2 bg-darkGrey100 rounded-xl p-4">
 <h1 class="hover:font-semibold cursor-pointer">Job Finden</h1>
 <h1 class="hover:font-semibold cursor-pointer">Favoriten</h1>
 <h2 class="hover:font-semibold cursor-pointer">Gespeicherte Jobs</h2>
@@ -63,7 +63,7 @@
     </div>
     -->
                 <NuxtLink to="/" class="hover::opacity-60 select-none cursor-pointer">   
-                <LOGOmjmEB />
+                <LOGOmjmCompany />
                 </NuxtLink>
   </div>
   <div class="navbar-center hidden lg:flex">
@@ -88,11 +88,11 @@
 
     <div @click="visibleLoginModal = true">
       <div class="flex items-center justify-center bg-transparent backdrop-blur-[10rem] hover:opacity-80 ">
-        <button class="btn btn-md flex items-center bg-transparent border border-gray-300 rounded-lg px-6 text-sm font-medium text-black focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <button class="btn btn-md hover:bg-transparent flex items-center bg-transparent border border-gray-300 rounded-lg px-6 text-sm font-medium text-black focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             </svg>
-          <span class="">Anmelden</span>
+          <span class="text-gray-500">Anmelden</span>
         </button>
       </div>
     </div>
@@ -106,12 +106,12 @@
     <div>
         <slot />
     </div>
-<div class="w-full h-[0.5px] bg-darkGrey40"></div>
-    <footer class="footer p-10 bg-transparent backdrop-blur-xl text-base-content">
+<div class="w-full h-[0.5px] bg-gray-700"></div>
+    <footer class="footer p-10 bg-transparent backdrop-blur-xl text-base-content text-gray-300">
   <aside>
     <div class="flex flex-col gap-[0.5rem]">
                 <div class="mt-[0.5rem] select-none cursor-pointer">   
-                  <LOGOmjmEB />
+                  <LOGOmjmCompany />
                 </div>
                     <div class="mt-4">
                     <p class="font-semibold">miniJobMatch GmbH</p>
@@ -143,7 +143,7 @@
 </footer>
 
 </div>
-
+</div>
 
 <!-- Background -->
 </template>
@@ -157,23 +157,6 @@ const visibleLoginModal = ref(false);
 
 <style scoped>
 
-.animated-background {
-    background-size: 400%;
 
-    -webkit-animation: animation 6s ease infinite;
-    -moz-animation: animation 6s ease infinite;
-    animation: animation 6s ease infinite;
-}
-
-@keyframes animation {
-    0%,
-    100% {
-        background-position: 0% 50%;
-    }
-    
-    50% {
-        background-position: 100% 50%;
-    }
-}
 </style>
 

@@ -75,6 +75,10 @@ export default defineNuxtConfig({
         customBlue10: '#F0FAFE',
         customBlue20: '#E2F5FD',
 
+        companyDarkGrey: '#181818',
+        companyLightGrey: '#282727',
+        companyBorderGrey: '#525151',
+
           'primary-50': 'rgb(var(--primary-50))',
           'primary-100': 'rgb(var(--primary-100))',
           'primary-200': 'rgb(var(--primary-200))',
