@@ -50,6 +50,11 @@ const generateSearchLink = () => {
   };
 };
 
+const navigateToSearch = () => {
+  const link = generateSearchLink();
+  router.push(link);
+};
+
 </script>
 
 
@@ -71,6 +76,7 @@ const generateSearchLink = () => {
     class="grow outline-none" 
     v-model="searchTerm" 
     placeholder="Suchbegriff (Optional)"
+    @keyup.enter="navigateToSearch"
     />
     </label>
 
@@ -88,6 +94,7 @@ class="input input-bordered flex items-center bg-white hover:bg-almostWhite focu
   type="text" 
   class="grow outline-none" 
   placeholder="Stadt, PLZ..."
+  @keyup.enter="navigateToSearch"
   />
 </label>
 

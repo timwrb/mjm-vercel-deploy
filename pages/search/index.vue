@@ -8,18 +8,18 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 const route = useRoute();
 
-// Router query
+// router query
 const handleQueryPush = () => {
-  // Get the current query parameters from the router
+  // get current query param
   const currentQuery = { ...route.query };
 
-  // Merge the existing query parameters with the new tag query parameters
+  // merge existing query params with new tag query params
   const mergedQuery = {
     ...currentQuery,
-    tags: selectedFilters.value.join(',') // Convert the array to a comma-separated string
+    tags: selectedFilters.value.join(',') // convert array to comma seperated sting / merge single letters to words
   };
 
-  // Update the router with the merged query parameters
+  // update router with new query params
   router.push({ query: mergedQuery });
 };
 
@@ -144,7 +144,7 @@ position="bottom"
                 </div>  
 <!-- Trigger button -->
 <div class="flex justify-center"> <!-- Search / Result Area -->
-  <div class="flex flex-row h-[100rem] w-full xl:w-[70rem] border-t border-darkGrey60">  
+  <div class="flex flex-row h-[100rem] w-full xl:w-[70rem] border-t border-gray-300">  
 
     <!-- Spacer nach oben mt-10 --><div class="hidden lg:flex h-full mt-10 w-full lg:w-3/12 flex-col pr-4"> <!-- Filter Area > :lg-->
       
@@ -182,7 +182,7 @@ position="bottom"
           />
 
           <label 
-          class="select-none hover:opacity-60" 
+          class="select-none hover:opacity-60 text-[0.9rem]" 
           :for="FilterOption.id">
           {{ FilterOption.label }}
           </label>
