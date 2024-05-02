@@ -21,7 +21,13 @@ return new class extends Migration
             $table->string('industry');
             $table->string('contact_email')->nullable();
             $table->string('contat_phone')->nullable();
-            $table->foreignId('address_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->string('company_state');
+            $table->string('company_zip');
+            $table->string('company_city');
+            $table->string('company_street');
+            $table->string('company_house_nr');
+            $table->string('company_address_addition')->nullable();
+
             $table->timestamps();
         });
 

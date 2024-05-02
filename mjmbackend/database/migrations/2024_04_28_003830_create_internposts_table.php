@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->foreignId('address_id')->constrained()->cascadeOnDelete();
+            $table->string('job_state');
+            $table->string('job_zip');
+            $table->string('job_city');
+            $table->string('job_street');
+            $table->string('job_house_nr');
+            $table->string('job_address_addition')->nullable();
             $table->boolean('visible')->default(true);
             $table->boolean('active')->default(true);
             $table->boolean('payed')->default(false);
