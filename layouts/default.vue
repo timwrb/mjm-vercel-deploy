@@ -68,15 +68,17 @@
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
-      <li><a class="font-medium text-[1rem]">Job finden</a></li>
       <li>
         <details>
-          <summary class="font-medium text-[1rem]">Favoriten</summary>
+          <summary class="font-medium text-[1rem]">Unternehmen</summary>
           <ul class="p-2">
-            <li><a>Gespeicherte Jobs</a></li>
-            <li><a>Option 2</a></li>
+            <li><a><NuxtLink to="/company-info">Anzeigen Schalten</NuxtLink></a></li>
+            <li><a>Unternehmen entdecken</a></li>
           </ul>
         </details>
+      </li>
+      <li>
+        <a href="/general/contact" class="font-medium text-[1rem]">Kontakt</a>
       </li>
       <li><a class="font-medium text-[1rem]">Über uns</a></li>
     </ul>
@@ -130,7 +132,9 @@
     <h6 class="footer-title">Unternehmen</h6> 
     <a class="link link-hover">Über uns</a>
     <a class="link link-hover">Kontakt</a>
-    <a class="link link-hover">Jobs</a>
+    <NuxtLink to="/general/feedback">
+    <p class="link link-hover">Feedback</p>
+    </NuxtLink>
     <a class="link link-hover">Impressum</a>
   </nav> 
   <nav>

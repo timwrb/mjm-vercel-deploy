@@ -21,13 +21,18 @@ class JobpostResource extends Resource
 {
     protected static ?string $model = Jobpost::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard';
 
     protected static ?string $modelLabel = 'Jobpost';
 
     protected static ?string $navigationLabel = 'Minijobstellen';
 
     protected static ?string $navigationGroup = 'Stellenanzeigen';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
 
     public static function form(Form $form): Form
@@ -59,18 +64,24 @@ class JobpostResource extends Resource
                 ]),
                 Forms\Components\Section::make('Adresse')
                     ->schema([
-                        Forms\Components\TextInput::make('address.zip_name')->label('PLZ')
+                        Forms\Components\TextInput::make('job_zip')
+                            ->label('PLZ')
                             ->required(),
-                        Forms\Components\TextInput::make('address.name_city')->label('Stadt')
+                        Forms\Components\TextInput::make('job_city')
+                            ->label('Stadt')
                             ->required(),
-                        Forms\Components\TextInput::make('address.name_state')->label('State')
+                        Forms\Components\TextInput::make('job_state')
+                            ->label('State')
                             ->required(),
-                        Forms\Components\TextInput::make('address.street_name')->label('Straße')
+                        Forms\Components\TextInput::make('job_street')
+                            ->label('Straße')
                             ->required(),
-                        Forms\Components\TextInput::make('address.housenumber_name')->label('Hausnummer')
+                        Forms\Components\TextInput::make('job_house_nr')
+                            ->label('Hausnummer')
                             ->required(),
-                        Forms\Components\TextInput::make('address.address_addition')->label('Addition')
-                            ->required(),
+                        Forms\Components\TextInput::make('job_address_addition')
+                            ->label('Addition')
+
                     ]),
 
     Section::make('Tags')->schema([

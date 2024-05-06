@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Company extends Model
 {
-    use HasFactory;
+
 
     protected $fillable = [
         'name',
@@ -18,7 +19,12 @@ class Company extends Model
         'industry',
         'contact_email',
         'contat_phone',
-        'address',
+        'company_state',
+        'company_zip',
+        'company_city',
+        'company_street',
+        'company_house_nr',
+        'company_address_addition'
     ];
 
     public function address(): \Illuminate\Database\Eloquent\Relations\HasOne
@@ -26,36 +32,15 @@ class Company extends Model
         return $this->hasOne(Address::class);
     }
 
-    public function setAddressData($data)
+    public function jobposts(): HasMany
     {
-        $this->city = $data['city'];
-        $this->zip = $data['zip'];
-        $this->state = $data['state'];
-        $this->street = $data['street'];
-        $this->house_nr = $data['house_nr'];
-        $this->address_addition = $data['address_addition'];
+        return $this->hasMany(Jobpost::class);
     }
-    public function save(array $options = [])
+
+    public function user(): HasMany
     {
-        // First, create the Address
-        $address = new \App\Models\Address;
-        $address->city = $this->city;
-        $address->zip = $this->zip;
-        $address->state = $this->state;
-        $address->street = $this->street;
-        $address->house_nr = $this->house_nr;
-        $address->address_addition = $this->address_addition;
-        $address->user_id = auth()->id();
-        $address->save();
-
-        // Set the address_id on the Company model
-        $this->address_id = $address->id;
-
-        // Remove the address data from the Company model
-        unset($this->city, $this->zip, $this->state, $this->street, $this->house_nr, $this->address_addition);
-
-        // Save the company instance
-        parent::save($options);
+        return $this->hasMany(User::class);
     }
+
 
 }

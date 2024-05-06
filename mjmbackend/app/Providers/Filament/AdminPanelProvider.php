@@ -9,6 +9,7 @@ use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -40,9 +41,21 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->passwordReset()
             ->emailVerification()
+            ->sidebarCollapsibleOnDesktop()
+            ->navigationGroups([
+                NavigationGroup::make()
+                ->label('Stellenanzeigen')
+                ->icon('heroicon-o-clipboard'),
+                NavigationGroup::make()
+                    ->label('Tags')
+                    ->icon('heroicon-o-tag'),
+                NavigationGroup::make()
+                    ->label('Benutzer')
+                    ->icon('heroicon-o-tag'),
+            ])
             ->font('Manrope')
             ->colors([
-                'primary' => '#D73A4C',
+                'primary' => '#8855b4',
                 'gray' => '#514f4f',
                 'info' => '#f7f7f7',
                 'success' => Color::Green,

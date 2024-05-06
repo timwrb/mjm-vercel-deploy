@@ -19,11 +19,16 @@ class TagResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
-    protected static ?string $navigationLabel = '-> Tags Minijob';
+    protected static ?string $navigationLabel = 'Minijob';
 
     protected static ?string $modelLabel = 'Minijob Tags';
 
     protected static ?string $navigationGroup = 'Tags';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {

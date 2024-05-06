@@ -56,9 +56,9 @@ class User extends Authenticatable implements HasTenants
     {
         return $this->belongsToMany(Company::class);
     }
-    public function company(): BelongsToMany
+    public function company(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsToMany(Company::class);
+        return $this->belongsTo(Company::class);
     }
 
     public function getTenants(Panel $panel): Collection

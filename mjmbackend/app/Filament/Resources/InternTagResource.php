@@ -19,11 +19,16 @@ class InternTagResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
-    protected static ?string $navigationLabel = '-> Tags Praktikum';
+    protected static ?string $navigationLabel = 'Praktikum';
 
     protected static ?string $modelLabel = 'Praktikum Tags';
 
     protected static ?string $navigationGroup = 'Tags';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {

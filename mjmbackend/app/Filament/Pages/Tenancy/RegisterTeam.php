@@ -6,6 +6,7 @@ use App\Models\Company;
 use Filament\Forms\Components\BelongsToSelect;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Split;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -22,54 +23,70 @@ class RegisterTeam extends RegisterTenant
     {
         return $form
             ->schema([
-                TextInput::make('name')->required(),
-                Textarea::make('desc'),
-                TextInput::make('legal_form')->required(),
-                TextInput::make('tax_id')->required(),
-                FileUpload::make('logo')->image(),
-                TextInput::make('industry')->required(),
-                TextInput::make('contact_email')->email(),
-                TextInput::make('contat_phone'),
+
+                    Section::make('Anzeigename')
+                        ->description('Gib gerne eine Beschreibung ab, um dich vorzustellen')
+                        ->schema([
+                            TextInput::make('name')
+                                ->required()
+                                ->label('Unternehmens Titel'),
+                            Textarea::make('desc')
+                                ->label('Beschreibung (Optional)'),
+                            FileUpload::make('Logo')
+                                ->image(),
+                        ]),
+
+                    Section::make('Unternehmensdaten')
+                        ->description('Fülle die folgenden Felder aus, um dein Unternehmen zu registrieren')
+                        ->schema([
+                            TextInput::make('legal_form')
+                                ->required()
+                                ->label('Rechtsform'),
+                            TextInput::make('tax_id')
+                                ->required()
+                                ->label('Steuer-Identifikationsnummer'),
+                            TextInput::make('industry')
+                                ->label('Branche')
+                                ->required(),
+                        ]),
+
+                Section::make('Kontaktdaten')
+                    ->description('Diese Daten werden Benutzern angezeigt, die sich für deine Stellenanzeigen interessieren.')
+                    ->schema([
+                        TextInput::make('contact_email')
+                            ->label('E-Mail')
+                            ->email(),
+                        TextInput::make('contat_phone')
+                            ->label('Telefonnummer')
+                            ->required(),
+                    ])->columns(2),
+
 
                 Section::make('Adresse')
                     ->schema([
-                        TextInput::make('zip')->label('PLZ')
+                        TextInput::make('address.zip_name')->label('PLZ')
                             ->required(),
-                        TextInput::make('city')->label('Stadt')
+                        TextInput::make('address.name_city')->label('Stadt')
                             ->required(),
-                        TextInput::make('state')->label('State')
+                        TextInput::make('address.name_state')->label('State')
                             ->required(),
-                        TextInput::make('street')->label('Straße')
+                        TextInput::make('address.street_name')->label('Straße')
                             ->required(),
-                        TextInput::make('house_nr')->label('Hausnummer')
+                        TextInput::make('address.housenumber_name')->label('Hausnummer')
                             ->required(),
-                        TextInput::make('address_addition')->label('Addition')
+                        TextInput::make('address.address_addition')->label('Addition')
                             ->required(),
-                    ]),
 
-            ])
-            ->columns(2);
+            ])->columns(2),
+        ]);
     }
+
+
     protected function handleRegistration(array $data): Company
     {
-        // Separate the address data from the company data
-        $addressData = [
-            'zip' => $data['zip'],
-            'city' => $data['city'],
-            'state' => $data['state'],
-            'street' => $data['street'],
-            'house_nr' => $data['house_nr'],
-            'address_addition' => $data['address_addition'],
-        ];
+        $team = Company::create($data);
 
-        // Remove the address data from the company data
-        $companyData = array_diff_key($data, $addressData);
-
-        // Create the company and set the address data
-        $team = new Company($companyData);
-        $team->setAddressData($addressData);
-        $team->save();
-
+        // Attach the currently logged in user to the newly created company
         $team->user_id = auth()->id();
         $user = auth()->user();
 

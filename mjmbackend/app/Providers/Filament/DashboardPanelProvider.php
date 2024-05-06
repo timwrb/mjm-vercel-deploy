@@ -35,6 +35,8 @@ class DashboardPanelProvider extends PanelProvider
             ->registration()
             ->passwordReset()
             ->emailVerification()
+            ->sidebarCollapsibleOnDesktop()
+            ->font('Manrope')
             ->colors([
                 'primary' => '#4A7D91',
                 'gray' => '#514f4f',

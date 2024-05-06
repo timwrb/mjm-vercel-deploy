@@ -18,11 +18,16 @@ class InternPostResource extends Resource
 {
     protected static ?string $model = Internpost::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard';
 
     protected static ?string $navigationGroup = 'Stellenanzeigen';
 
     protected static ?string $navigationLabel = 'Praktikumsstellen';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {

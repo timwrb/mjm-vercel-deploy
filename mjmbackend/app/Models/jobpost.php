@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class jobpost extends Model
@@ -15,12 +16,12 @@ class jobpost extends Model
         'content',
         'visible',
         'active',
-        'name_city',
-        'zip_name',
-        'street_name',
-        'housenumber_name',
-        'address_addition',
-        'name_state',
+        'job_state',
+        'job_zip',
+        'job_city',
+        'job_street',
+        'job_house_nr',
+        'job_address_addition',
     ];
 
 
@@ -34,9 +35,9 @@ class jobpost extends Model
         return $this->hasOne(address::class);
     }
 
-    public function company(): BelongsToMany
+    public function company(): BelongsTo
     {
-        return $this->belongsToMany(Company::class);
+        return $this->belongsTo(Company::class);
     }
 
 

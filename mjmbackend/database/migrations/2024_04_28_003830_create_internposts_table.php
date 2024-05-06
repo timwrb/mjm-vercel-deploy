@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('internposts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('company_id')->constrained();
             $table->string('title');
             $table->text('content');
             $table->string('job_state');

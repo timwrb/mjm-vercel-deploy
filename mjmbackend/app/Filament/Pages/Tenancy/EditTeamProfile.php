@@ -64,17 +64,17 @@ class EditTeamProfile extends EditTenantProfile
 
                 Section::make('Adresse')
                     ->schema([
-                        TextInput::make('address.zip_name')->label('PLZ')
+                        TextInput::make('company_zip')->label('PLZ')
                             ->required(),
-                        TextInput::make('address.name_city')->label('Stadt')
+                        TextInput::make('company_city')->label('Stadt')
                             ->required(),
-                        TextInput::make('address.name_state')->label('State')
+                        TextInput::make('company_state')->label('State')
                             ->required(),
-                        TextInput::make('address.street_name')->label('Straße')
+                        TextInput::make('company_street')->label('Straße')
                             ->required(),
-                        TextInput::make('address.housenumber_name')->label('Hausnummer')
+                        TextInput::make('company_house_nr')->label('Hausnummer')
                             ->required(),
-                        TextInput::make('address.address_addition')->label('Addition')
+                        TextInput::make('company_address_addition')->label('Addition')
                             ->required(),
                     ]),
             ]);
