@@ -103,22 +103,40 @@ class JobpostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Titel')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('address_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('company_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('hidden')
+                Tables\Columns\TextColumn::make('job_state')
+                    ->label('Bundesland')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('job_city')
+                    ->label('Stadt')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('job_zip')
+                    ->label('PLZ')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('job_house_nr')
+                    ->label('Hausnummer')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('job_address_addition')
+                    ->label('Adresszusatz')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('job_street')
+                    ->searchable(),
+                Tables\Columns\IconColumn::make('visible')
                     ->boolean(),
-                Tables\Columns\IconColumn::make('expired')
+                Tables\Columns\IconColumn::make('active')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Erstell Datum')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Zuletzt bearbeitet')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

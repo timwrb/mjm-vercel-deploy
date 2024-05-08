@@ -56,8 +56,10 @@
 
         </div> <!-- form body-->
 
-<div class="p-4">
+<div class="p-8"> <!-- BODY COMPONENTS -->
 
+    <div v-if="activeButton === 'kontakt'"> <FormContact /> </div>
+    <div v-else> <FormFeedback /> </div>
 
     </div>
 
