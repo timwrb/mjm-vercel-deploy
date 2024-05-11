@@ -10,11 +10,11 @@ export default {
     }),
     container: ({ props }) => ({
         class: [
-            'my-4 rounded-md w-full',
+            'my-4 rounded-[1rem] w-full',
 
             'shadow-lg',
-            'bg-surface-0 dark:bg-surface-800',
-            'ring-1 ring-inset ring-surface-200 dark:ring-surface-700 ring-offset-0',
+            'bg-surface-0 dark:bg-almostWhite',
+            'ring-1 ring-inset ring-surface-200 dark:ring-gray-300 ring-offset-0',
             // Colors
             {
                 'text-blue-500 dark:text-blue-300': props.message.severity == 'info',
@@ -54,7 +54,7 @@ export default {
     detail: ({ props }) => ({
         class: [
           'block',
-          'text-surface-600 dark:text-surface-0/70',
+          'text-surface-600 dark:text-darkGrey100',
           { 'mt-1.5': props.message.summary },
         ],
     }),
@@ -74,15 +74,15 @@ export default {
 
             // Colors
             'bg-transparent',
-            'text-surface-700 dark:text-surface-0/80',
+            'text-surface-700 dark:text-darkGrey100',
 
             // Transitions
             'transition duration-200 ease-in-out',
 
             // States
-            'hover:bg-surface-100 dark:hover:bg-surface-700',
+            'hover:bg-surface-100 dark:hover:bg-almostWhite',
             'outline-none focus:ring-1 focus:ring-inset',
-            'focus:ring-primary-500 dark:focus:ring-primary-400',
+            'focus:ring-primary-500 dark:focus:ring-almostWhite',
 
             // Misc
             'overflow-hidden'

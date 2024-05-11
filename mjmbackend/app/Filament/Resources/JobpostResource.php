@@ -3,19 +3,18 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\JobpostResource\Pages;
-use App\Filament\Resources\JobpostResource\RelationManagers;
 use App\Models\Jobpost;
 use Filament\Forms;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\RelationshipSelect;
-use Filament\Forms\Components\MultipleSelect;
+
 
 class JobpostResource extends Resource
 {
@@ -25,7 +24,7 @@ class JobpostResource extends Resource
 
     protected static ?string $modelLabel = 'Jobpost';
 
-    protected static ?string $navigationLabel = 'Minijobstellen';
+    protected static ?string $navigationLabel = 'Stellenanzeigen';
 
     protected static ?string $navigationGroup = 'Stellenanzeigen';
 
@@ -102,16 +101,29 @@ class JobpostResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\BadgeColumn::make('type')
+                    ->label('Typ')
+                    ->colors([
+                        'primary',
+                        'warning' => static fn ($state): bool => $state === 'intern',
+                        'primary' => static fn ($state): bool => $state === 'job',
+                    ])
+                    ->icon('heroicon-o-clipboard')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('company_id')
+                    ->label('Unternehmen')
+                    ->badge()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('title')
                     ->label('Titel')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('job_state')
                     ->label('Bundesland')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('job_city')
-                    ->label('Stadt')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('job_city')
+                    ->label('Stadt')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('job_zip')
                     ->label('PLZ')
                     ->searchable()
@@ -125,19 +137,26 @@ class JobpostResource extends Resource
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('job_street')
-                    ->searchable(),
+                    ->label('Straße')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\IconColumn::make('visible')
+                    ->label('Sichtbar')
+                    ->falseIcon('heroicon-o-eye-slash')
+                    ->trueIcon('heroicon-o-eye')
                     ->boolean(),
-                Tables\Columns\IconColumn::make('active')
+                Tables\Columns\IconColumn::make('payed')
+                    ->label('Bezahlt')
+                    ->falseIcon('heroicon-o-no-symbol')
+                    ->trueIcon('heroicon-o-shield-check')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Erstell Datum')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->label('Erstellt')
+                    ->since()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label('Zuletzt bearbeitet')
-                    ->dateTime()
+                    ->since()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])

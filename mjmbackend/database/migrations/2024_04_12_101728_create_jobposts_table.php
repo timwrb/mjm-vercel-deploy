@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('jobposts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained();
+            $table->string('type');
             $table->string('title');
             $table->text('content');
             $table->string('job_state');
@@ -24,8 +25,8 @@ return new class extends Migration
             $table->string('job_house_nr');
             $table->string('job_address_addition')->nullable();
             $table->boolean('visible')->default(true);
-            $table->boolean('active')->default(true);
             $table->boolean('payed')->default(false);
+            $table->string('duration')->nullable()->default(null);
             $table->timestamps();
 
         });

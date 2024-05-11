@@ -5,7 +5,7 @@
         <div class="w-[24px] h-[24px]"></div>
 
         <div class="mt-2">
-            <LOGOmjmEB />
+            <LogoMjmEB />
         </div>
     </template>
 

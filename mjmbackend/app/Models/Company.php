@@ -37,6 +37,16 @@ class Company extends Model
         return $this->hasMany(Jobpost::class);
     }
 
+    public function feedbacks(): HasMany
+    {
+        return $this->hasMany(Feedback::class);
+    }
+
+    public function contactrequests(): HasMany
+    {
+        return $this->hasMany(ContactRequest::class);
+    }
+
     public function user(): HasMany
     {
         return $this->hasMany(User::class);

@@ -4,12 +4,6 @@
     <div class="hidden lg:flex">
    <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem] -z-10"></div>
 </div>
-<!-- Right Gradient Light Bulb -->
-<div class="hidden xl:flex">
-   <div class="ml-[68.75rem] absolute justify-center h-[22rem] -z-10">
-  <div class="absolute w-[7.813rem] h-[21.875rem] bg-gradientBlueLight blur-[9.375rem]"></div>
-</div>
-</div>
 
 
 <div class="flex flex-col xl:flex-row">
@@ -28,7 +22,7 @@
 <section>
     <div class="flex justify-center mt-[8rem] h-full">
 
-    <div class=" bg-customBlue bg-opacity-[1%] backdrop-blur-xl border border-gray-300 rounded-[1rem] w-[42rem] h-[36rem]">
+    <div class=" bg-customBlue bg-opacity-[1%] backdrop-blur-[5rem] border border-gray-300 rounded-[1rem] w-[42rem] h-[39rem]">
         <div class="w-full rounded-[1rem] p-4 flex-row">
 
             <div class="flex flex-row ">
@@ -38,7 +32,7 @@
         'border-2 border-customBlue': activeButton !== 'kontakt'
       }"
       class="cursor-pointer rounded-tl-full rounded-bl-full h-[2.5rem] w-1/2 flex justify-center items-center"
-      @click="activeButton = 'kontakt'"
+      @click="changeTab('kontakt')"
     >
       <a class="font-medium">Kontakt</a>
     </div>
@@ -48,7 +42,7 @@
         'border-2 border-customBlue': activeButton !== 'feedback'
       }"
       class="cursor-pointer rounded-tr-full rounded-br-full h-[2.5rem] w-1/2 flex justify-center items-center"
-      @click="activeButton = 'feedback'"
+      @click="changeTab('feedback')"
     >
       <a class="font-medium">Feedback</a>
     </div>
@@ -76,9 +70,23 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
-const activeButton = ref('kontakt')
+const router = useRouter();
+const route = useRoute();
 
-const email = ref('')
+const activeButton = ref(route.query.type || 'kontakt');
 
+const changeTab = (tabName: string) => {
+    activeButton.value = tabName;
+    router.push({ query: { type: activeButton.value } });
+};
+
+// Ändern Sie den Wert von activeButton, wenn sich die Route ändert
+watch(() => route.query.type, (newVal) => {
+    if (typeof newVal === 'string') {
+        activeButton.value = newVal;
+    }
+});
 </script>

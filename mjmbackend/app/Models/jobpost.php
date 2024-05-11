@@ -22,6 +22,8 @@ class jobpost extends Model
         'job_street',
         'job_house_nr',
         'job_address_addition',
+        'company_id',
+        'type',
     ];
 
 

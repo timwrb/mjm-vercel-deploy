@@ -6,6 +6,7 @@ use App\Models\Company;
 use Filament\Forms\Components\BelongsToSelect;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Split;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -64,20 +65,37 @@ class RegisterTeam extends RegisterTenant
 
                 Section::make('Adresse')
                     ->schema([
-                        TextInput::make('address.zip_name')->label('PLZ')
+                        TextInput::make('company_zip')->label('PLZ')
                             ->required(),
-                        TextInput::make('address.name_city')->label('Stadt')
+                        TextInput::make('company_city')->label('Stadt')
                             ->required(),
-                        TextInput::make('address.name_state')->label('State')
+                        Select::make('company_state')->label('Bundesland')
+                            ->label('Bundesland')
+                            ->required()
+                            ->options([
+                                'Baden-Württemberg' => 'Baden-Württemberg',
+                                'Bayern' => 'Bayern',
+                                'Berlin' => 'Berlin',
+                                'Brandenburg' => 'Brandenburg',
+                                'Bremen' => 'Bremen',
+                                'Hamburg' => 'Hamburg',
+                                'Hessen' => 'Hessen',
+                                'Mecklenburg-Vorpommern' => 'Mecklenburg-Vorpommern',
+                                'Niedersachsen' => 'Niedersachsen',
+                                'Nordrhein-Westfalen' => 'Nordrhein-Westfalen',
+                                'Rheinland-Pfalz' => 'Rheinland-Pfalz',
+                                'Saarland' => 'Saarland',
+                                'Sachsen' => 'Sachsen',
+                                'Sachsen-Anhalt' => 'Sachsen-Anhalt',
+                                'Schleswig-Holstein' => 'Schleswig-Holstein',
+                                'Thüringen' => 'Thüringen',
+                            ]),
+                        TextInput::make('company_street')->label('Straße')
                             ->required(),
-                        TextInput::make('address.street_name')->label('Straße')
+                        TextInput::make('company_house_nr')->label('Hausnummer')
                             ->required(),
-                        TextInput::make('address.housenumber_name')->label('Hausnummer')
-                            ->required(),
-                        TextInput::make('address.address_addition')->label('Addition')
-                            ->required(),
-
-            ])->columns(2),
+                        TextInput::make('company_address_addition')->label('Addition')
+                    ]),
         ]);
     }
 

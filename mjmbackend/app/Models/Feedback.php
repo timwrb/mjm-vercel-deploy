@@ -18,4 +18,10 @@ class Feedback extends Model
             'device',
             'status',
  ];
+
+    public function Company(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
+

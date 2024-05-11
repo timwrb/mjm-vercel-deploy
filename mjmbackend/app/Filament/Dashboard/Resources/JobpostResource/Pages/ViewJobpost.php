@@ -4,7 +4,9 @@ namespace App\Filament\Dashboard\Resources\JobpostResource\Pages;
 
 use App\Filament\Dashboard\Resources\JobpostResource;
 use Filament\Actions;
+use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ViewRecord;
+use Illuminate\Database\Eloquent\Builder;
 
 class ViewJobpost extends ViewRecord
 {

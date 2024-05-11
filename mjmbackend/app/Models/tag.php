@@ -12,6 +12,8 @@ class tag extends Model
 
     protected $fillable = [
         'tag',
+        'type',
+        'category',
     ];
 
     public function jobposts(): BelongsToMany

@@ -19,7 +19,7 @@ class TagResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
-    protected static ?string $navigationLabel = 'Minijob';
+    protected static ?string $navigationLabel = 'Tags';
 
     protected static ?string $modelLabel = 'Minijob Tags';
 
@@ -37,6 +37,16 @@ class TagResource extends Resource
                 Forms\Components\TextInput::make('tag')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\Select::make('type')
+            ->options([
+                'job' => 'Job',
+                'praktikum' => 'Praktikum',
+                ]),
+                Forms\Components\Select::make('category')
+                    ->options(
+                        \App\Models\TagCategory::query()->pluck('name', 'id')->toArray()
+                    )
+                    ->required(),
             ]);
     }
 
@@ -44,7 +54,20 @@ class TagResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\BadgeColumn::make('type')
+                    ->label('Typ')
+                    ->colors([
+                        'primary',
+                        'warning' => static fn ($state): bool => $state === 'praktikum',
+                        'primary' => static fn ($state): bool => $state === 'Job',
+                    ])
+                    ->icon('heroicon-o-clipboard')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('tag')
+                    ->label('Tag Name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('category')
+                    ->label('Kategorie')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -61,6 +84,7 @@ class TagResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

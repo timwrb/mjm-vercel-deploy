@@ -48,8 +48,9 @@ class EditTeamProfile extends EditTenantProfile
                             ->label('Steuer-Identifikationsnummer'),
                         TextInput::make('industry')
                             ->required(),
-                ]),
+                ])->columnSpanFull(),
             ])->from('md'),
+
 
                 Section::make('Kontaktdaten')
                     ->description('Diese Daten werden Benutzern angezeigt, die sich für deine Stellenanzeigen interessieren.')
@@ -74,8 +75,8 @@ class EditTeamProfile extends EditTenantProfile
                             ->required(),
                         TextInput::make('company_house_nr')->label('Hausnummer')
                             ->required(),
-                        TextInput::make('company_address_addition')->label('Addition')
-                            ->required(),
+                        TextInput::make('company_address_addition')->label('Addition'),
+
                     ]),
             ]);
 

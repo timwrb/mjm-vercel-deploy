@@ -1,164 +1,156 @@
-
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <!-- andere head tags -->
-        @livewireStyles
-    </head>
-
-    <body>
-    <div class="z-20 mt-[4rem] px-12 py-8 border border-companyBorderGrey rounded-1rem flex flex-col md:flex-row gap-8 bg-companyLightGrey shadow-gray-900/20">
-
-
-        <div
-            class="ring-companyBorderGrey ring-[1px] flex flex-col bg-clip-border rounded-xl bg-darkGrey40 border-gray-300 text-white shadow-gray-900/20 shadow-md w-full max-w-[20rem] p-8">
-            <div
-                class="relative pb-8 m-0 mb-8 overflow-hidden text-center text-gray-700 bg-transparent border-b rounded-none shadow-none bg-clip-border border-white/10">
-                <p class="block text-sm antialiased font-normal leading-normal text-white uppercase">
-                    Basisplan
-                </p>
-                <h1 class="flex justify-center gap-1 mt-6 font-sans antialiased font-normal tracking-normal text-white text-7xl">
-                    <span class="mt-2 text-4xl">€</span>49
-                    <!-- <span class="self-end text-4xl">/mo</span> -->
-                </h1>
-            </div>
-            <div class="p-0">
-                <ul class="flex flex-col gap-4">
-                    <li class="flex items-center gap-4">
-        <span class="p-1 border rounded-full border-white/20 bg-white/20"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                               fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
-          </svg></span>
-                        <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
-                            desc1
-                        </p>
-                    </li>
-                    <li class="flex items-center gap-4">
-        <span class="p-1 border rounded-full border-white/20 bg-white/20"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                               fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
-          </svg></span>
-                        <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
-                            desc2
-                        </p>
-                    </li>
-                    <li class="flex items-center gap-4">
-        <span class="p-1 border rounded-full border-white/20 bg-white/20"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                               fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
-          </svg></span>
-                        <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
-                            desc3
-                        </p>
-                    </li>
-                    <li class="flex items-center gap-4">
-        <span class="p-1 border rounded-full border-white/20 bg-white/20"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                               fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
-          </svg></span>
-                        <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
-                            desc4
-                        </p>
-                    </li>
-                    <li class="flex items-center gap-4">
-        <span class="p-1 border rounded-full border-white/20 bg-white/20"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                               fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
-          </svg></span>
-                        <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">
-                            desc5
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="p-0 mt-12">
-                <button
-                    class="btn hover:opacity-80 align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg bg-white text-blue-gray-900 shadow-md shadow-blue-gray-500/10 hover:shadow-lg hover:shadow-blue-gray-500/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none block w-full hover:scale-[1.02] focus:scale-[1.02] active:scale-100"
-                    type="button">
-                    Anzeige Schalten
-                </button>
+<div>
+    <section class="py-20 relative z-50">
+        <div class="container">
+            <div class="mx-auto max-w-2xl sm:text-center">
+                <span class="font-medium text-gray-400 tracking-widest">our price</span>
+                <h2 class="md:text-5xl text-3xl font-medium tracking-tight mt-7">Price Plans</h2>
+                <div class="w-10 mx-auto mt-5 bg-gradient-to-r from-cyan-500 to-blue-500 h-[2px]"></div>
+                <p class="mt-6 text-xl/8 text-gray-600 dark:text-gray-400">Choose the plan that suits your needs best and enjoy the creative process of brainstorming the new project of yours.</p>
             </div>
 
-    </div>
+            <div class="grid lg:grid-cols-3 grid-cols-1 gap-10 2xl:px-28 mt-20">
 
+                <div class="flex flex-col border border-gray-300 rounded-xl overflow-hidden dark:border-gray-700">
+                    <div class="text-center pt-10">
+                        <h5 class="text-xl font-semibold">Basic</h5>
+                        <h2 class="text-5xl mt-8 mb-3 items-center align-middle">
+                            <sup class="text-2xl align-middle">$</sup>49
+                        </h2>
+                        <span>per user, per month</span>
+                    </div>
 
+                    <div class="p-10">
+                        <ul class="mb-10 text-center">
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">10k Visitors/mo</h5>
+                            </li>
+                            <li>
+                                <h5 class="font-medium dark:text-gray-300">10 Funnels, 50 Pages</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">Unlimited Transactions</h5>
+                            </li>
+                            <li>
+                                <h5 class="font-medium dark:text-gray-300">Analytics</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">lnstegrations</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium text-gray-500 line-through dark:text-gray-300">Audience Date</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium text-gray-500 line-through dark:text-gray-300">Premium templates</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium text-gray-500 line-through dark:text-gray-300">White Labelling</h5>
+                            </li>
+                        </ul>
+                        <div class="flex justify-center">
+                            <a href="#" class="py-3 px-6 font-medium border rounded-md border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-all duration-500">Get Basic</a>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
-    @livewireScripts
-    </body>
+                <div class="relative z-20">
+                    <div class="absolute top-0 inset-x-0">
+                        <div class="flex justify-center">
+                            <span class="text-xs font-medium uppercase border border-gray-700 text-white bg-black px-2 py-1 rounded-md -mt-3">most popular</span>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="border rounded-xl border-gray-300 bg-white dark:border-gray-700 dark:bg-neutral-900">
+                            <div class="text-center">
+                                <div class="flex flex-col">
+                                    <div class="text-center pt-10">
+                                        <h5 class="text-xl font-semibold">Professional</h5>
+                                        <h2 class="text-5xl mt-8 mb-3 items-center align-middle">
+                                            <sup class="text-2xl align-middle">$</sup>69
+                                        </h2>
+                                        <span>per user, per month</span>
+                                    </div>
 
-    <style>
-        .text-sm {
-            font-size: 0.875rem;
-            line-height: 1.25;
-        }
-        .text-4xl {
-            font-size: 2.25rem;
-            line-height: 1.25;
-        }
-        .text-7xl {
-            font-size: 4rem;
-            line-height: 1;
-        }
+                                    <div class="p-10">
+                                        <ul class="mb-10 text-center">
+                                            <li class="my-4">
+                                                <h5 class="font-medium dark:text-gray-300">10k Visitors/mo</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="font-medium dark:text-gray-300">10 Funnels, 50 Pages</h5>
+                                            </li>
+                                            <li class="my-4">
+                                                <h5 class="font-medium dark:text-gray-300">Unlimited Transactions</h5>
+                                            </li>
+                                            <li>
+                                                <h5 class="font-medium dark:text-gray-300">Analytics</h5>
+                                            </li>
+                                            <li class="my-4">
+                                                <h5 class="font-medium dark:text-gray-300">lnstegrations</h5>
+                                            </li>
+                                            <li class="my-4">
+                                                <h5 class="font-medium dark:text-gray-300">Audience Date</h5>
+                                            </li>
+                                            <li class="my-4">
+                                                <h5 class="font-medium dark:text-gray-300">Premium templates</h5>
+                                            </li>
+                                            <li class="my-4">
+                                                <h5 class="font-medium text-gray-500 line-through dark:text-gray-300">White Labelling</h5>
+                                            </li>
+                                        </ul>
+                                        <div class="flex justify-center">
+                                            <a href="#" class="py-3 px-6 font-medium border rounded-md border-purple-500 bg-purple-500 text-white hover:bg-purple-500-800">Get Pro</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute bg-neutral-300/30 rounded-xl dark:bg-neutral-700 h-full left-0 top-0 w-full translate-x-2 translate-y-2 -z-10"></div>
+                    </div>
+                </div>
 
-        .bg-companyDarkGrey {
-            background-color: #181818;
-        }
-        .bg-companyLightGrey {
-            background-color: #282727;
-        }
+                <div class="flex flex-col border border-gray-300 rounded-xl overflow-hidden dark:border-gray-700">
+                    <div class="text-center pt-10">
+                        <h5 class="text-xl font-semibold">Ultimate</h5>
+                        <h2 class="text-5xl mt-8 mb-3 items-center align-middle">
+                            <sup class="text-2xl align-middle">$</sup>89
+                        </h2>
+                        <span>per user, per month</span>
+                    </div>
 
-        .darkGrey100 {
-            color: #252323;
-        }
-
-        .darkGrey60 {
-            color: rgba(37, 35, 35, 0.6);
-        }
-
-        .darkGrey40 {
-            color: rgba(37, 35, 35, 0.4);
-        }
-
-        .customBlue {
-            color: #4A7D91;
-        }
-
-        .customBlueDarker {
-            color: #6ccff6;
-        }
-
-        .almostBlack {
-            color: #0f0f0f;
-        }
-
-        .almostWhite {
-            color: #F7F7F7;
-        }
-
-        .customBlue10 {
-            color: #F0FAFE;
-        }
-
-        .customBlue20 {
-            color: #E2F5FD;
-        }
-
-        .companyDarkGrey {
-            color: #181818;
-        }
-
-        .companyLightGrey {
-            color: #282727;
-        }
-
-        .companyBorderGrey {
-            color: #525151;
-        }
-        .rounded-1rem {
-            border-radius: 1rem;
-        }
-    </style>
+                    <div class="p-10">
+                        <ul class="mb-10 text-center">
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">10k Visitors/mo</h5>
+                            </li>
+                            <li>
+                                <h5 class="font-medium dark:text-gray-300">10 Funnels, 50 Pages</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">Unlimited Transactions</h5>
+                            </li>
+                            <li>
+                                <h5 class="font-medium dark:text-gray-300">Analytics</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">lnstegrations</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">Audience Date</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">Premium templates</h5>
+                            </li>
+                            <li class="my-4">
+                                <h5 class="font-medium dark:text-gray-300">White Labelling</h5>
+                            </li>
+                        </ul>
+                        <div class="flex justify-center">
+                            <a href="#" class="py-3 px-6 font-medium border rounded-md border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-all duration-500">Get Ultimate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5 class="text-center font-medium mt-14">lnterested in a custom plan? <a href="#" class="text-purple-500">Get in touch</a></h5>
+        </div>
+    </section>
+</div>

@@ -4,11 +4,9 @@ import { createResolver } from 'nuxt/kit';
 import path from 'path';
 
 export default defineNuxtConfig({
+  devtools: { enabled: true },
   css: ['@/assets/css/base.css'],
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-primevue', "@nuxt/content", 'nuxt-vue3-google-signin'],
-  googleSignIn: {
-    clientId: '1007847544417-lg4amgojqn55dfedihkfepvvnu69edif.apps.googleusercontent.com',
-  },
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-primevue', "@nuxt/content"],
   primevue: {
     options: {
       unstyled: true
@@ -106,5 +104,5 @@ export default defineNuxtConfig({
       }
     },
     },
-  }, // Add a comma here
+  },
 })

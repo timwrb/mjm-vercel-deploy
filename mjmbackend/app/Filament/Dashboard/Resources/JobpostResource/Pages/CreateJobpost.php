@@ -3,6 +3,7 @@
 namespace App\Filament\Dashboard\Resources\JobpostResource\Pages;
 
 use App\Filament\Dashboard\Resources\JobpostResource;
+use Closure;
 use Filament\Actions;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Radio;
@@ -22,6 +23,8 @@ class CreateJobpost extends CreateRecord
 
     protected static string $resource = JobpostResource::class;
 
+    protected static ?string $navigationLabel = 'Stellenanzeige Erstellen';
+
 
     public function form(Form $form): Form
     {
@@ -31,7 +34,23 @@ class CreateJobpost extends CreateRecord
                 Wizard\Step::make('Beschreibung')
                     ->icon('heroicon-o-document-text')
                     ->schema([
-                        Section::make('Anzeige erstellen')
+                        Section::make('Was für eine Stelle wird gesucht?')
+                            ->schema([
+                                Radio::make('type')
+                                    ->label('Type')
+                                    ->options([
+                                        'intern' => 'Praktikum',
+                                        'job' => 'Job',
+                                    ])
+                                    ->reactive()
+                                    ->required(),
+                                TextInput::make('duration')
+                                    ->label('Duration')
+                                    ->nullable()
+                                    ->hidden(fn ($get) => $get('type') !== 'intern')
+                                    ->required(fn ($get) => $get('type') === 'intern')
+                            ])->columns(2),
+                        Section::make('Anzeige Beschreiben')
                             ->description('Gestalte deine individuelle Stellenanzeige')
                             ->schema([
                                 TextInput::make('title')->label('Titel')

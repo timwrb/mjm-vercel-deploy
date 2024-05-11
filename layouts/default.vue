@@ -11,7 +11,7 @@
 <Sidebar v-model:visible="visible" >
       <template #header>
         <div class="flex items-center">
-          <LOGOmjmEB />
+          <LogoMjmEB />
         </div>
       </template>
 <div class="flex flex-col gap-2 bg-transparent rounded-xl p-4">
@@ -63,7 +63,7 @@
     </div>
     -->
                 <NuxtLink to="/" class="hover::opacity-60 select-none cursor-pointer">   
-                <LOGOmjmEB />
+                <LogoMjmEB />
                 </NuxtLink>
   </div>
   <div class="navbar-center hidden lg:flex">
@@ -78,7 +78,7 @@
         </details>
       </li>
       <li>
-        <a href="/general/contact" class="font-medium text-[1rem]">Kontakt</a>
+        <a href="/general/contact?type=kontakt" class="font-medium text-[1rem]">Kontakt</a>
       </li>
       <li><a class="font-medium text-[1rem]">Über uns</a></li>
     </ul>
@@ -113,7 +113,7 @@
   <aside>
     <div class="flex flex-col gap-[0.5rem]">
                 <div class="mt-[0.5rem] select-none cursor-pointer">   
-                  <LOGOmjmEB />
+                  <LogoMjmEB />
                 </div>
                     <div class="mt-4">
                     <p class="font-semibold">miniJobMatch GmbH</p>
