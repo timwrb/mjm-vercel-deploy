@@ -89,12 +89,12 @@
     </NuxtLink> -->
 
     <div @click="visibleLoginModal = true">
-      <div class="flex items-center justify-center bg-transparent backdrop-blur-[10rem] hover:opacity-80 ">
-        <button class="btn btn-md flex items-center bg-transparent border border-gray-300 rounded-lg px-6 text-sm font-medium text-black focus:outline-none">
+      <div class="flex items-center justify-center bg-transparent hover:bg-gray-300 rounded-full h-[3rem] transition transition-all ease-in-out duration-150 hover:opacity-80 ">
+        <button class=" flex items-center shadow-none bg-transparent rounded-full px-6 text-sm font-medium text-black focus:outline-none">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             </svg>
-          <span class="">Anmelden</span>
+          <span class="ml-2 text-[1rem]">Anmelden</span>
         </button>
       </div>
     </div>
@@ -131,18 +131,16 @@
   <nav>
     <h6 class="footer-title">Unternehmen</h6> 
     <a class="link link-hover">Über uns</a>
-    <a class="link link-hover">Kontakt</a>
-    <NuxtLink to="/general/feedback">
-    <p class="link link-hover">Feedback</p>
-    </NuxtLink>
+    <a href="/contact?type=kontakt" class="link link-hover">Kontakt</a>
+    <p href="/contact?type=feedback" class="link link-hover">Feedback</p>
     <a class="link link-hover">Impressum</a>
   </nav> 
   <nav>
     <h6 class="footer-title">Rechtlich</h6>
-    <a class="link link-hover">A G B</a>
-    <a class="link link-hover">Terms of use</a>
-    <a class="link link-hover">Privacy policy</a>
-    <a class="link link-hover">Cookie policy</a>
+    <a href="/general/agb" class="link link-hover">A G B</a>
+    <a href="/general/datenschutz" class="link link-hover">Datenschutz</a>
+    <a href="/general/privacy" class="link link-hover">Privatsphäre</a>
+    <a href="/general/cookies" class="link link-hover">Cookie Richtlinien</a>
   </nav>
 </footer>
 
