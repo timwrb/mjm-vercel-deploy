@@ -1,7 +1,6 @@
 
 <script setup>
 import { marked } from 'marked';
-import { ref, defineProps, watch } from 'vue';
 import { useRouter } from 'vue-router';
 
 
