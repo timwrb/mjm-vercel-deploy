@@ -13,7 +13,7 @@
   
   </div>
       <div class="h-full w-full flex justify-center">
-  <LPHeroSectionOld />
+  <LPHeroSection />
       </div>
       
   
@@ -28,9 +28,11 @@
       <!-- Minijob Shot Desktop -->
       <div class="hidden lg:flex">
           <div class="flex-col flex justify-start md:justify-center items-center">
-        <span class="font-bold text-[3rem] bg-gradientBlue bg-clip-text text-transparent">Minijobs</span>
+        <span class="font-bold text-[3rem] text-customBlue">Minijobs</span>
           <NuxtLink to="/search?searchTerm=&city=&tags=Minijob">
-            <div class="hidden md:flex btn hover:bg-almostBlack hover:opacity-85 cursor-pointer select-none mt-[1.063rem] w-[13.438rem] h-[3.5rem] bg-almostBlack items-center justify-center flex font-medium text-[1.5rem] rounded-full text-white">Entdecken</div>
+            <div class="hidden md:flex btn hover:border-customBlue hover:border-2 hover:opacity-85 hover:text-darkGrey100 hover:bg-transparent cursor-pointer shadow-none select-none mt-[1.063rem] w-[13.438rem] h-[3.5rem] bg-transparent items-center justify-center flex font-medium text-[1.4rem] rounded-lg text-darkGrey100 border border-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
+                Entdecken</div>
           </NuxtLink>
       </div>
     </div>
@@ -74,7 +76,9 @@
                 <div class="flex-col flex justify-start md:justify-center items-center">
                   <span class="font-bold text-[3rem] bg-gradientBrown bg-clip-text text-transparent">Praktikum</span>
                       <NuxtLink to="/search?searchTerm=&city=&tags=Praktikum">
-                          <div class="hidden md:flex btn hover:bg-almostBlack hover:opacity-85 cursor-pointer select-none mt-[1.063rem] w-[13.438rem] h-[3.5rem] bg-almostBlack items-center justify-center flex font-medium text-[1.5rem] rounded-full text-white">Entdecken</div>
+                          <div class="hidden md:flex btn hover:bg-transparent hover:opacity-85 cursor-pointer select-none mt-[1.063rem] w-[13.438rem] h-[3.5rem] bg-transparent items-center justify-center flex font-medium text-[1.4rem] rounded-lg text-darkGrey100 hover:text-darkGrey100 border border-gray-300 hover:border-customBlue hover:border-2 ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>
+                            Entdecken</div>
                       </NuxtLink>
                 </div>
           </div>
@@ -93,8 +97,8 @@
       <div class="h-px flex-grow bg-gray-300 ml-4 mr-12"></div>
   </div>
   <!-- inspired by tailwindcss.com -->
-  
-  <ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-8 mb-[6rem] items-start p-8 lg:mr-[10rem] lg:ml-[10rem]">
+  <div class="w-full flex justify-center">
+  <ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-8 mb-[6rem] items-start p-8 lg:mr-[10rem] lg:ml-[10rem] max-w-[74rem] flex justify-center">
       
       <!-- Card 1-->
       <li class="border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] hover:p-[1.1rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
@@ -102,10 +106,10 @@
               <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
                   538€ Vertrag ( Minijob )
               </h3>
-              <div class="prose prose-slate prose-sm text-slate-600">
+              <div class="prose prose-slate prose-sm text-slate-600 line-clamp-5">
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos earum voluptatum, omnis nesciunt labore pariatur tempore laudantium consectetur ipsa veritatis reiciendis in aliquid aperiam? Aliquam hic quo quisquam maxime explicabo?</p>
               </div><a
-                  class="btn btn-sm btn-outline hover:text-darkGrey100 group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none bg-white text-slate-700 hover:bg-almostWhite mt-6"
+                  class="btn btn-sm btn-outline hover:text-darkGrey100 group inline-flex items-center h-9 rounded-lg text-sm font-semibold whitespace-nowrap px-3 focus:outline-none bg-white text-slate-700 hover:bg-almostWhite mt-6"
                   href="">Zum Artikel
                   <span class="sr-only">, Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -122,10 +126,10 @@
               <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
                   538€ Vertrag ( Minijob )
               </h3>
-              <div class="prose prose-slate prose-sm text-slate-600">
+              <div class="prose prose-slate prose-sm text-slate-600 line-clamp-5">
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos earum voluptatum, omnis nesciunt labore pariatur tempore laudantium consectetur ipsa veritatis reiciendis in aliquid aperiam? Aliquam hic quo quisquam maxime explicabo?</p>
               </div><a
-                  class="btn btn-sm btn-outline hover:text-darkGrey100 group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none bg-white text-slate-700 hover:bg-almostWhite mt-6"
+                  class="btn btn-sm btn-outline hover:text-darkGrey100 group inline-flex items-center h-9 rounded-lg text-sm font-semibold whitespace-nowrap px-3 focus:outline-none bg-white text-slate-700 hover:bg-almostWhite mt-6"
                   href="">Zum Artikel
                   <span class="sr-only">, Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -142,10 +146,10 @@
               <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
                   538€ Vertrag ( Minijob )
               </h3>
-              <div class="prose prose-slate prose-sm text-slate-600">
+              <div class="prose prose-slate prose-sm text-slate-600 line-clamp-5">
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos earum voluptatum, omnis nesciunt labore pariatur tempore laudantium consectetur ipsa veritatis reiciendis in aliquid aperiam? Aliquam hic quo quisquam maxime explicabo?</p>
               </div><a
-                  class="btn btn-sm btn-outline hover:text-darkGrey100 group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none bg-white text-slate-700 hover:bg-almostWhite mt-6"
+                  class="btn btn-sm btn-outline hover:text-darkGrey100 group inline-flex items-center h-9 rounded-lg text-sm font-semibold whitespace-nowrap px-3 focus:outline-none bg-white text-slate-700 hover:bg-almostWhite mt-6"
                   href="">Zum Artikel
                   <span class="sr-only">, Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -158,7 +162,8 @@
   
   
   </ul>
-  
+</div>
+
   </div> 
   </section>
   

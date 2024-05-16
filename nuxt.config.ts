@@ -6,7 +6,7 @@ import path from 'path';
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['@/assets/css/base.css'],
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-primevue', "@nuxt/content"],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-primevue', "@nuxt/content", '@vueuse/nuxt',],
   primevue: {
     options: {
       unstyled: true
