@@ -83,7 +83,7 @@ defineProps({
 <!-- Sidebar Filter -->
 <Sidebar 
 v-model:visible="visibleFilterSidebar" 
-position="bottom"
+position="left"
 >
 
   <template #header>
@@ -114,7 +114,7 @@ position="bottom"
 
         <div 
         v-if="FilterOption.label === 'DIVIDER'" 
-        class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4">
+        class="w-full h-[0.5px] bg-gray-300 mb-4 mt-4">
         </div>
         
         <div v-else class="flex items-center gap-2 text-darkGrey100" >
@@ -167,7 +167,7 @@ position="bottom"
 
         <div 
         v-if="FilterOption.label === 'DIVIDER'" 
-        class="w-full h-[0.5px] bg-darkGrey40 mb-4 mt-4"></div>
+        class="w-full h-[0.5px] bg-gray-300 mb-4 mt-4"></div>
         
         <div v-else class="flex items-center gap-2 text-darkGrey100" >
           <Checkbox 

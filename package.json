@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/content": "^2.12.1",
     "@nuxtjs/markdownit": "^2.0.0",
+    "@vueuse/motion": "^2.1.0",
     "marked": "^12.0.2",
     "nuxt": "^3.11.1",
     "nuxt-vue3-google-signin": "^0.0.11",

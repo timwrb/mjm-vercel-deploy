@@ -14,25 +14,14 @@
           <LogoMjmEB />
         </div>
       </template>
-<div class="flex flex-col gap-2 bg-transparent rounded-xl p-4">
+<div class="flex flex-col gap-4 bg-transparent rounded-xl p-4 text-[1.2rem]">
 <h1 class="hover:font-semibold cursor-pointer">Job Finden</h1>
-<h1 class="hover:font-semibold cursor-pointer">Favoriten</h1>
-<h2 class="hover:font-semibold cursor-pointer">Gespeicherte Jobs</h2>
-<h2 class="hover:font-semibold cursor-pointer">Favoriten</h2>
-<h1 class="hover:font-semibold cursor-pointer">Über uns</h1>
-      <div class="mt-12 mb-12 flex justify-center">
-        <GoogleLoginButton />
-      </div>
-        <div class="flex items-center justify-center hover:opacity-80 ">
-          <NuxtLink to="http://127.0.0.1:8000/admin">
-              <button class="btn flex items-center bg-transparent border border-gray-300 rounded-lg shadow-md px-6 py-2 text-sm font-medium text-black focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
-                </svg>
-              <span>Anzeigen Schalten</span>
-            </button>
-          </NuxtLink>
-        </div>
+<h1 class="hover:font-semibold cursor-pointer">Unernehmen</h1>
+<h2 class="hover:font-semibold cursor-pointer">Kontakt</h2>
+<h2 class="hover:font-semibold cursor-pointer">Über uns</h2>
+<h1 class="hover:font-semibold cursor-pointer">für Arbeitgeber</h1>
+<h1 class="hover:font-semibold cursor-pointer">Anmelden</h1>
+
 
 </div>
 </Sidebar>
@@ -108,8 +97,7 @@
     <div>
         <slot />
     </div>
-<div class="w-full h-[0.5px] bg-darkGrey40"></div>
-    <footer class="footer p-10 bg-transparent backdrop-blur-xl text-base-content">
+    <footer class="footer p-10 bg-transparent backdrop-blur-xl text-base-content border border-t border-gray-300">
   <aside>
     <div class="flex flex-col gap-[0.5rem]">
                 <div class="mt-[0.5rem] select-none cursor-pointer">   

@@ -2,7 +2,7 @@
 
     <div class="">
 <Toast />
-    <div class="flex flex-row gap-4">
+    <div class="flex flex-col md:flex-row gap-4">
 
         <div class="flex w-full flex-col gap-2 justify-center"> <!-- first_name -->
         <label for="first_name" class="text-[0.9rem] sm:text-[1rem] text-darkGrey100">Vorname</label>
@@ -18,7 +18,7 @@
 
     </div>
 
-    <div class="flex flex-row gap-4">
+    <div class="flex flex-col md:flex-row gap-4">
 
     <div class="flex w-full flex-col gap-2 justify-center mt-4"> <!-- E-Mail -->
         <label for="email" class="text-[0.9rem] sm:text-[1rem] text-darkGrey100">E-Mail Adresse</label>

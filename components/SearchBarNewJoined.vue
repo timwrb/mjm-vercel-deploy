@@ -9,7 +9,7 @@
                 placeholder="Suchbegriff..."
                 v-model="searchTerm"
                 @keyup.enter="navigateToSearch"
-                class="focus:outline-none bg-white text-[1rem] sm:text-[1.2rem] h-full w-[8rem] sm:w-[12rem] md:w-[18rem] xll:w-[33rem] rounded-tl-full rounded-bl-full"
+                class="focus:outline-none bg-white text-[1rem] sm:text-[1.2rem] h-full w-[8rem] sm:w-[12rem] md:w-[18rem] xl:w-[28rem] rounded-tl-full rounded-bl-full"
                 />
             </div>
             <div class="flex items-center flex-row gap-2">
@@ -21,7 +21,7 @@
                 placeholder="Ort..."
                 v-model="city"
                 @keyup.enter="navigateToSearch"
-                class="focus:outline-none bg-white text-[1rem] sm:text-[1.2rem] rounded-tr-full rounded-br-full h-full w-[6rem] sm:w-[10rem] md:w-[16rem] xll:w-[24rem]"
+                class="focus:outline-none bg-white text-[1rem] sm:text-[1.2rem] rounded-tr-full rounded-br-full h-full w-[6rem] sm:w-[10rem] md:w-[16rem] xl:w-[16rem]"
                 />
             </div>
             

@@ -13,7 +13,7 @@
   
   </div>
       <div class="h-full w-full flex justify-center">
-  <LPHeroSection />
+  <LPHeroSection v-motion-fade-visible-once/>
       </div>
       
   
@@ -24,9 +24,9 @@
   </div> -->
   
   <div>
-    <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
+    <div class="px-2 flex-col lg:flex-row w-full flex lg:justify-center mt-[4rem] sm:mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
       <!-- Minijob Shot Desktop -->
-      <div class="hidden lg:flex">
+      <div v-motion-fade-visible-once class="hidden lg:flex">
           <div class="flex-col flex justify-start md:justify-center items-center">
         <span class="font-bold text-[3rem] text-customBlue">Minijobs</span>
           <NuxtLink to="/search?searchTerm=&city=&tags=Minijob">
@@ -37,13 +37,14 @@
       </div>
     </div>
     <!-- Minijob Shot Mobile -->
-    <div class="flex lg:hidden ml-6 items-center">
+    <div v-motion-fade-visible-once class="flex lg:hidden ml-6 items-center">
       <div class="hidden sm:flex h-px w-[4rem] bg-gray-300 ml-4 mr-8 mt-1"></div>
       <span class=" font-bold text-[2rem] sm:text-[2.5rem] bg-gradientBlue bg-clip-text text-transparent">Minijobs</span>
       <div class="h-px flex-grow bg-gray-300 ml-4 mr-8 mt-1"></div>
     </div>
   
       <JobCard
+      v-motion-slide-visible-once-right
         :company="'Shell Tankstellen'"
         :title="'Aushilfe Shell Tankstelle 538€  Basis (m / w / d)'"
         :date="'11 März, 2024'"
@@ -57,13 +58,14 @@
   
     <div class="flex-col lg:flex-row w-full flex lg:justify-center mt-[5rem] md:mt-[9.375rem] gap-[1rem] sm:gap-[1.5rem] lg:gap-[5.313rem] lg:items-center">
   <!-- Internshot Mobile -->
-          <div class="flex lg:hidden mr-6 items-center">
+          <div v-motion-fade-visible-once class="flex lg:hidden mr-6 items-center">
               <div class="h-px flex-grow bg-gray-300 ml-4 mr-8 mt-1"></div>
                   <span class=" font-bold text-[2rem] sm:text-[2.5rem] bg-gradientBrown bg-clip-text text-transparent">Praktikum</span>
               <div class="hidden sm:flex h-px w-[4rem] bg-gray-300 ml-4 mr-8 mt-1"></div>
           </div>
       
       <JobCard
+      v-motion-slide-visible-once-left
         :company="'Shell Tankstellen'"
         :title="'Aushilfe Shell Tankstelle 538€ Basis (m / w / d)'"
         :date="'14 März, 2024'"
@@ -72,7 +74,7 @@
         :salary="'12,50€'"
       />
       <!-- Internshot Desktop -->
-          <div class="hidden lg:flex">
+          <div v-motion-fade-visible-once class="hidden lg:flex">
                 <div class="flex-col flex justify-start md:justify-center items-center">
                   <span class="font-bold text-[3rem] bg-gradientBrown bg-clip-text text-transparent">Praktikum</span>
                       <NuxtLink to="/search?searchTerm=&city=&tags=Praktikum">
@@ -91,13 +93,13 @@
   <section>
   <div class="mt-[8rem]">
   <!-- Header Articles -->
-  <div class="flex justify-center mb-4 items-center">
+  <div v-motion-fade-visible-once class="flex justify-center mb-4 items-center">
       <div class="h-px flex-grow bg-gray-300 ml-12 mr-4"></div>
           <h1 class="font-bold text-[1.5rem] sm:text-[2rem] ">Entdecke Artikel</h1>
       <div class="h-px flex-grow bg-gray-300 ml-4 mr-12"></div>
   </div>
   <!-- inspired by tailwindcss.com -->
-  <div class="w-full flex justify-center">
+  <div v-motion-slide-visible-once-bottom class="w-full flex justify-center">
   <ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-8 mb-[6rem] items-start p-8 lg:mr-[10rem] lg:ml-[10rem] max-w-[74rem] flex justify-center">
       
       <!-- Card 1-->

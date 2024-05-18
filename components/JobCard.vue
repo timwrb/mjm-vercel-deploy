@@ -2,7 +2,7 @@
 w-[46.375rem] h-[12.625rem] bg-almostWhite shadow-xl hover:-translate-y-1 transition-transform duration-150 ease-in-out
 <template>
       <div class="justify-center flex">
-        <div class="w-full lg:w-[46.375rem] border border-gray-300 bg-transparent backdrop-blur-[10rem] boxShadowSquared rounded-[2rem] cursor-pointer lg:transform lg:hover:-translate-y-1 transition-transform duration-150 ease-in-out">
+        <div class="pr-4 w-full lg:w-[46.375rem] border border-gray-300 bg-transparent backdrop-blur-[10rem] boxShadowSquared rounded-[2rem] cursor-pointer lg:transform lg:hover:-translate-y-1 transition-transform duration-150 ease-in-out">
           <div class="flex">
             <div class="hidden sm:flex border border-px border-darkGrey40 rounded-[1.5rem] sm:mt-[1.875rem] ml-[2rem] h-[4rem] w-[4rem] bg-white"></div>
           <div class="flex flex-col ml-[1.75rem] mt-[1.0rem] sm:mt-[2.375rem]">

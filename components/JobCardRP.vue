@@ -15,7 +15,7 @@
           <span class="flex sm:hidden text-darkGrey40 font-medium text-[0.7rem] sm:text-[0.825rem]">{{ company }}</span>
             </div>
             <div class="flex-row w-full mr-2">
-          <h1 class=" w-full truncate text-darkGrey100 font-bold text-[1rem] sm:text-[1.2rem] pr-2 whitespace-normal mt-1 sm:mt-0">{{ title }}</h1>
+          <h1 class=" w-full line-clamp-2 text-darkGrey100 font-bold text-[1rem] sm:text-[1.2rem] pr-2 whitespace-normal mt-1 sm:mt-0">{{ title }}</h1>
           </div>
         </div>
         </div>
