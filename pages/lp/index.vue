@@ -12,7 +12,7 @@
   </div>
   
   </div>
-      <div class="h-full w-full flex justify-center">
+      <div class="h-full w-screen flex justify-center">
   <LPHeroSection v-motion-fade-visible-once/>
       </div>
       
