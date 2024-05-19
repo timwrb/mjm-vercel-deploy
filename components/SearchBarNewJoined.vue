@@ -1,6 +1,6 @@
 <template>
 
-<div class="justify-center lg:justify-normal w-full flex">
+<div class="justify-center lg:justify-normal flex">
     <div class=" bg-transparent h-[2.5rem] sm:h-[3.5rem] flex flex-row">
         <div class="h-full flex flex-row bg-white border border-gray-300 rounded-lg pl-4">
             <div class="flex flex-row items-center gap-2">

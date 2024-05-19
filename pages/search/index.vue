@@ -70,11 +70,11 @@ defineProps({
 </script>
 
 <template>
-    <div class=""> <!-- Wrapper -->
+    <div class="w-full"> <!-- Wrapper -->
 
 
-        <div class="mt-6 md:mt-12 flex justify-center mb-6 md:mb-12">
-        <SearchBar />
+        <div class="mt-6 md:mt-12 flex justify-center w-full mb-6 md:mb-12">
+        <SearchBarNewJoined />
         </div>
 
         <div class="flex flex-col justify-center"> <!-- Filter Section Above < :lg -->
@@ -145,7 +145,7 @@ position="left"
 <div class="flex justify-center"> <!-- Search / Result Area -->
   <div class="flex flex-row h-[100rem] w-full xl:w-[70rem] border-t border-gray-300">  
 
-    <!-- Spacer nach oben mt-10 --><div class="hidden lg:flex h-full mt-10 w-full lg:w-3/12 flex-col pr-4"> <!-- Filter Area > :lg-->
+    <!-- Spacer nach oben mt-10 --><div class="hidden lg:flex h-full mt-10 w-full lg:w-3/12 flex-col pr-2"> <!-- Filter Area > :lg-->
       
   <div class="w-full h-fit">
         <div class="flex items-center">
@@ -158,7 +158,7 @@ position="left"
 
         </div>
       </div>
-      <div class="ml-2 flex flex-col gap-2 mt-2"> 
+     <!-- Filter Section DESKTOP --> <div class="border rounded-[1rem] p-4 ml-2 flex flex-col gap-2 mt-2"> 
 
         <div 
         v-for="FilterOption of filterSections" 

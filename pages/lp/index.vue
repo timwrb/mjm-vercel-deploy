@@ -103,7 +103,7 @@
   <ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-8 mb-[6rem] items-start p-8 lg:mr-[10rem] lg:ml-[10rem] max-w-[74rem] flex justify-center">
       
       <!-- Card 1-->
-      <li class="border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] hover:p-[1.1rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
+      <li class="hover:scale-[1.02] border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
           <div class="order-1 sm:ml-6 xl:ml-0">
               <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
                   538€ Vertrag ( Minijob )
@@ -123,7 +123,7 @@
       </li>
   
   <!-- Card 2 -->
-      <li class="border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] hover:p-[1.1rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
+      <li class="hover:scale-[1.02] border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
           <div class="order-1 sm:ml-6 xl:ml-0">
               <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
                   538€ Vertrag ( Minijob )
@@ -143,7 +143,7 @@
       </li>
   
   <!-- Card 3 -->
-  <li class="border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] hover:p-[1.1rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
+  <li class="hover:scale-[1.02] border border-gray-200 rounded-[1.5rem] hover:shadow-lg hover:border-customBlue border-2 p-[1.2rem] transition-all duration-250 ease-in-out relative flex flex-col sm:flex-row xl:flex-col items-start">
           <div class="order-1 sm:ml-6 xl:ml-0">
               <h3 class="mb-2 text-darkGrey100 font-bold text-[1.2rem]">
                   538€ Vertrag ( Minijob )
@@ -179,4 +179,9 @@
   </div>
   </template>
   
+<script setup>
+import { useMotion } from '@vueuse/motion'
+useMotion()
+
+</script>
   <style> @import url("/assets/css/base.css"); </style>
