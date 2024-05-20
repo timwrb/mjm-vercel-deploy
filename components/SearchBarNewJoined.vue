@@ -6,10 +6,10 @@
             <div class="flex flex-row items-center gap-2">
                 <svg class="" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 20 20" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 1.5C4.52208 1.5 1.5 4.52208 1.5 8.25C1.5 11.9779 4.52208 15 8.25 15C10.1142 15 11.8006 14.2453 13.023 13.023C14.2453 11.8006 15 10.1142 15 8.25C15 4.52208 11.9779 1.5 8.25 1.5ZM0 8.25C0 3.69365 3.69365 0 8.25 0C12.8063 0 16.5 3.69365 16.5 8.25C16.5 10.2578 15.782 12.0991 14.5899 13.5293L19.2803 18.2197C19.5732 18.5126 19.5732 18.9874 19.2803 19.2803C18.9874 19.5732 18.5126 19.5732 18.2197 19.2803L13.5293 14.5899C12.0991 15.782 10.2578 16.5 8.25 16.5C3.69365 16.5 0 12.8063 0 8.25Z" fill="#252323" fill-opacity="0.6"/></svg>
                 <input 
-                placeholder="Suchbegriff..."
+                placeholder="Suche..."
                 v-model="searchTerm"
                 @keyup.enter="navigateToSearch"
-                class="focus:outline-none bg-white text-[1rem] sm:text-[1.2rem] h-full w-[8rem] sm:w-[12rem] md:w-[18rem] xl:w-[28rem] rounded-tl-full rounded-bl-full"
+                class="focus:outline-none bg-white text-[1rem] sm:text-[1.2rem] h-full w-[6.5rem] sm:w-[12rem] md:w-[18rem] xl:w-[28rem] rounded-tl-full rounded-bl-full"
                 />
             </div>
             <div class="flex items-center flex-row gap-2">

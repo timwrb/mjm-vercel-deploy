@@ -17,10 +17,12 @@
 <div class="flex flex-col gap-4 bg-transparent rounded-xl p-4 text-[1.2rem]">
 <h1 class="hover:font-semibold cursor-pointer">Job Finden</h1>
 <h1 class="hover:font-semibold cursor-pointer">Unernehmen</h1>
-<h2 class="hover:font-semibold cursor-pointer">Kontakt</h2>
+<NuxtLink to="/general/contact?type=kontakt" @click="visible = false">
+  <h2 class="hover:font-semibold cursor-pointer">Kontakt</h2>
+</NuxtLink>
 <h2 class="hover:font-semibold cursor-pointer">Über uns</h2>
 <h1 class="hover:font-semibold cursor-pointer">für Arbeitgeber</h1>
-<h1 class="hover:font-semibold cursor-pointer">Anmelden</h1>
+<h1 class="hover:font-semibold cursor-pointer" @click="visible = false, visibleLoginModal = true">Anmelden</h1>
 
 
 </div>

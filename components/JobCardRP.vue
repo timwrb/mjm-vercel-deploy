@@ -3,7 +3,7 @@
 <template>
   <!-- <NuxtLink :to="'/jobview/' + id"> -->
 <!-- <a :href="'/jobview/' + id"> -->
-    <div class="justify-center flex mb-2 cursor-pointer" @click="visible = true">
+    <div v-motion-slide-visible-once-bottom class="justify-center flex mb-2 cursor-pointer" @click="visible = true">
       <div class="w-full pr-2 backdrop-blur-[20rem] border border-px rounded-[1rem] transform md:hover:translate-x-1 transition-transform duration-150 ease-in-out md:hover:border-customBlue">
         <div class="flex">
           <div class="hidden sm:flex border border-px border-darkGrey40 rounded-[1.5rem] sm:mt-[1.875rem] ml-[2rem] h-[4rem] w-[4rem] bg-white"></div>

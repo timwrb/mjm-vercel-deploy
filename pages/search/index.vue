@@ -74,7 +74,7 @@ defineProps({
 
 
         <div class="mt-6 md:mt-12 flex justify-center w-full mb-6 md:mb-12">
-        <SearchBarNewJoined />
+        <SearchBarNewJoined v-motion-fade-visible-once />
         </div>
 
         <div class="flex flex-col justify-center"> <!-- Filter Section Above < :lg -->
@@ -216,7 +216,8 @@ position="left"
 <!-- / Filter Button--> </div>
 
                         <div class="mb-2 overflow-y-scroll w-full ml-2 mr-2 hidden lg:flex items-center h-full">
-                          <FilterTag 
+                          <FilterTag
+                          v-motion-pop-visible-once
                           v-for="(tag, index) in selectedFilters" 
                           :key="index" 
                           :label="tag"/>
